@@ -1,0 +1,111 @@
+{
+    "comment": "code 구성: 학년_출판사_개정년도_과목,영역_과목",
+    "books":
+    [
+        {
+            "code": "High_Chunjae_2015_Science_IntergratedScience",
+            "name": "고등 통합과학(신영준)(2015개정)",
+            "grade": "High",
+            "subject": "Science",
+            "publisher": "Chunjae",
+            "revision": "2015"
+        },
+        {
+            "code": "High_Chunjae_2015_Science_ScientificResearch",
+            "name": "고등 과학탐구실험(신영준)(2015개정)",
+            "grade": "High",
+            "subject": "Science",
+            "publisher": "Chunjae",
+            "revision": "2015"
+        },
+        {
+            "code": "High_Chunjae_2015_Science_Physics1",
+            "name": "고등 물리학1(강남화)(2015개정)",
+            "grade": "High",
+            "subject": "Science",
+            "publisher": "Chunjae",
+            "revision": "2015"
+        },
+        {
+            "code": "High_Chunjae_2015_Science_Physics2",
+            "name": "고등 물리학2(강남화)(2015개정)",
+            "grade": "High",
+            "subject": "Science",
+            "publisher": "Chunjae",
+            "revision": "2015"
+        },
+        {
+            "code": "High_Chunjae_2015_Science_BioScience1",
+            "name": "고등 생명과학1(이준규)(2015개정)",
+            "grade": "High",
+            "subject": "Science",
+            "publisher": "Chunjae",
+            "revision": "2015"
+        },
+        {
+            "code": "High_Chunjae_2015_Science_BioScience2",
+            "name": "고등 생명과학2(이준규)(2015개정)",
+            "grade": "High",
+            "subject": "Science",
+            "publisher": "Chunjae",
+            "revision": "2015"
+        },
+        {
+            "code": "High_Chunjae_2015_Science_GeoScience1",
+            "name": "고등 지구과학1(오필석)(2015개정)",
+            "grade": "High",
+            "subject": "Science",
+            "publisher": "Chunjae",
+            "revision": "2015"
+        },
+        {
+            "code": "High_Chunjae_2015_Science_GeoScience2",
+            "name": "고등 지구과학2(오필석)(2015개정)",
+            "grade": "High",
+            "subject": "Science",
+            "publisher": "Chunjae",
+            "revision": "2015"
+        },
+        {
+            "code": "High_Chunjae_2015_Science_Chemistry1",
+            "name": "고등 화학1(노태희)(2015개정)",
+            "grade": "High",
+            "subject": "Science",
+            "publisher": "Chunjae",
+            "revision": "2015"
+        },
+        {
+            "code": "High_Chunjae_2015_Science_Chemistry2",
+            "name": "고등 화학2(노태희)(2015개정)",
+            "grade": "High",
+            "subject": "Science",
+            "publisher": "Chunjae",
+            "revision": "2015"
+        },
+        {
+            "code": "Middle1_Visang_2015_Science",
+            "name": "[2015개정] 중학교 과학 1(임태훈)",
+            "grade": "Middle1",
+            "subject": "Science",
+            "publisher": "Visang",
+            "revision": "2015"
+        },
+        {
+            "code": "Middle2_Visang_2015_Science",
+            "name": "[2015개정] 중학교 과학 2(임태훈)",
+            "grade": "Middle2",
+            "subject": "Science",
+            "publisher": "Visang",
+            "revision": "2015"
+        },
+        {
+            "code": "Middle3_Visang_2015_Science",
+            "name": "[2015개정] 중학교 과학 3(임태훈)",
+            "grade": "Middle3",
+            "subject": "Science",
+            "publisher": "Visang",
+            "revision": "2015"
+        }
+    
+    ]
+} 
