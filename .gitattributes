@@ -1,1 +1,1 @@
-*.a filter=lfs diff=lfs merge=lfs -text
+Mobile-Laboratory/Assets/Plugins/iOS/libMaxstAR.a filter=lfs diff=lfs merge=lfs -text
