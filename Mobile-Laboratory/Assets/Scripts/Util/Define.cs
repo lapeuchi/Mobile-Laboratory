@@ -21,7 +21,7 @@ public class Define
     public enum DataCodes
     {
         BookData,
-        BookSelectOption,
+        BookCode,
     }
 
     public enum UIEvent

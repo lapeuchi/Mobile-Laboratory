@@ -3,57 +3,56 @@
     [
         {
             "code": "All",
-            "name_kor": "전체",
-            "name_eng": "All"
+            "name": "전체"
         },
         {
-            "code": "high",
-            "name_kor": "고등",
-            "name_eng": "High"
+            "code": "High",
+            "name": "고등"
         },
         {
-            "code": "middle3",
-            "name_kor": "중3",
-            "name_eng": "High"
+            "code": "Middle3",
+            "name": "중3"
+        },
+        {
+            "code": "Middle2",
+            "name": "중2"
+        },
+        {
+            "code": "Middle1",
+            "name": "중1"
         }
+
     ],
 
     "publisher":
     [
         {
             "code": "All",
-            "name_kor": "전체",
-            "name_eng": "All"
+            "name": "전체"
         },
         {
             "code": "Chunjae",
-            "name_kor": "천재교육",
-            "name_eng": "Chunjae"
+            "name": "천재교육"
         },
         {
             "code": "Visang",
-            "name_kor": "비상교육",
-            "name_eng": "Visang"  
+            "name": "비상교육"
         },
         {
             "code": "Kyohak",
-            "name_kor": "교학",
-            "name_eng": "Kyohak"
+            "name": "교학"
         },
         {
             "code": "Donga",
-            "name_kor": "동아",
-            "name_eng": "Donga"
+            "name": "동아"
         },
         {
             "code": "MiraeN",
-            "name_kor": "미레엔",
-            "name_eng": "MiraeN"
+            "name": "미레엔"
         },
         {
             "code": "Jihaksa",
-            "name_kor": "지학사",
-            "name_eng": "Jihaksa"
+            "name": "지학사"
         }
     ],
 
@@ -61,14 +60,12 @@
     [
         {
             "code": "All",
-            "name_kor": "전체",
-            "name_eng": "All"   
+            "name": "전체"
             
         },
         {
             "code": "Science",
-            "name_kor": "과학",
-            "name_eng": "Science"
+            "name": "과학"
         }
     ]
 
