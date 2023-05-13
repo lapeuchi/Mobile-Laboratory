@@ -32,10 +32,11 @@ public class DataManager
 
 public class UserData
 {
-    string language;    
-    string subject;
-    string publisher;
-    string grade;
+    public string language;    
+    public string subject;
+    public string publisher;
+    public string grade;
+    public Data_Books.Book book;
 
     public UserData()
     {

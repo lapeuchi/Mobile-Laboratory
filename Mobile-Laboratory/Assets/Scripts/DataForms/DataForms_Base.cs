@@ -37,7 +37,7 @@ public class Data_Books : IDataContent
         }
     }
 
-    public struct Book
+    public class Book
     {
         public string code;
         public string name;
