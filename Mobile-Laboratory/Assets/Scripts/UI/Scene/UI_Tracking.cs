@@ -8,12 +8,14 @@ public class UI_Tracking : UI_Scene
 {
     enum Buttons
     {
-        BookSelectButton
+        BookSelectButton,
+        SettingButton
     }
 
     enum Images
     {
-        BookSelectImage
+        BookSelectImage,
+        
     }
 
     Button bookSelectButton;
@@ -21,6 +23,8 @@ public class UI_Tracking : UI_Scene
 
     protected override void Init()
     {
+        base.Init();
+
         BindImage(typeof(Images), true);
         BindButton(typeof(Buttons), true);
         
@@ -29,6 +33,7 @@ public class UI_Tracking : UI_Scene
 
         SetSelectImage();
         bookSelectButton.onClick.AddListener(delegate { Managers.UI.ShowPopupUI<BookSelect_Popup>(); });
+        GetButton((int)Buttons.SettingButton).onClick.AddListener(delegate { Managers.UI.ShowPopupUI<UI_SettingPopup>(); });
     }
 
     public void SetSelectImage()

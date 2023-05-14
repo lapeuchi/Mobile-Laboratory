@@ -37,18 +37,12 @@ public class UIManager
         if(sort)
         {
             canvas.sortingOrder = order;
-            //Debug.Log("sort: " + canvas.sortingOrder);
             order++;
             
         }
         else
         {
             canvas.sortingOrder = 0;
-        }
-        
-        if(canvas.renderMode == RenderMode.ScreenSpaceCamera)
-        {
-            canvas.worldCamera = Camera.main;
         }
     }
 

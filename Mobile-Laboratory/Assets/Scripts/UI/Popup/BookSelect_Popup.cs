@@ -55,6 +55,7 @@ public class BookSelect_Popup : UI_Popup
 
     protected override void Init()
     {
+        base.Init();
         BindButton(typeof(Buttons), true);
         BindText(typeof(Texts), true);
         BindDropdown(typeof(Dropdowns), true);

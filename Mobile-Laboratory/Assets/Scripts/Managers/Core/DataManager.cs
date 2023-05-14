@@ -37,8 +37,9 @@ public class UserData
     public Data_Books.Book Book { get; private set; }
 
     public float BgmVolume { get; private set; }
+    
     public float VfxVolume { get; private set; }
-
+    
     public UserData()
     {
         GetBookSelectData();
@@ -77,12 +78,18 @@ public class UserData
         PlayerPrefs.SetInt("bookIndex", bookIndex);
         
     }
-    
-    public void SetOptionData()
-    {
-        PlayerPrefs.SetFloat("bgmVolume", BgmVolume);
-        PlayerPrefs.SetFloat("vfxVolume", VfxVolume);
 
-        
+
+    
+    public void SetBgmVolume(float value) 
+    {
+        BgmVolume = value;
+        PlayerPrefs.SetFloat("bgmVolume", value);
+    }
+
+    public void SetVfxVolume(float value) 
+    {
+        VfxVolume = value;
+        PlayerPrefs.SetFloat("vfxVolume", value);
     }
 }
