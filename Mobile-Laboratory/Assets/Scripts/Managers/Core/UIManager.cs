@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager
 {
@@ -19,18 +20,26 @@ public class UIManager
     public UI_Scene SceneUI { get; set; }
     Stack<UI_Popup> popupStack = new Stack<UI_Popup>();
     int order = 10;
+    Vector2 resolution = new Vector2(2340, 1080);
 
     public void SetCanvas(GameObject go, bool sort = false)
     {
         Canvas canvas = go.GetOrAddComponent<Canvas>();
         canvas.overrideSorting = true;
-        canvas.renderMode = RenderMode.ScreenSpaceCamera;
+        canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+        
+        CanvasScaler scaler = go.GetOrAddComponent<CanvasScaler>();
+        scaler.referenceResolution = resolution;
+        scaler.screenMatchMode = CanvasScaler.ScreenMatchMode.Expand;
+
         go.transform.SetParent(_root);
 
         if(sort)
         {
             canvas.sortingOrder = order;
+            //Debug.Log("sort: " + canvas.sortingOrder);
             order++;
+            
         }
         else
         {

@@ -9,7 +9,7 @@
             "subject": "Science",
             "publisher": "Chunjae",
             "revision": "2015",
-            "titleImagePath": "Sprites/TextbookImages/High_Chunjae_2015_Science_IntergratedScience"
+            "coverImagePath": "Sprites/TextbookImages/High_Chunjae_2015_Science_IntergratedScience"
         },
         {
             "code": "High_Chunjae_2015_Science_ScientificResearch",
@@ -18,7 +18,7 @@
             "subject": "Science",
             "publisher": "Chunjae",
             "revision": "2015",
-            "titleImagePath": "Sprites/TextbookImages/High_Chunjae_2015_Science_ScientificResearch"
+            "coverImagePath": "Sprites/TextbookImages/High_Chunjae_2015_Science_ScientificResearch"
         },
         {
             "code": "High_Chunjae_2015_Science_Physics1",
@@ -27,7 +27,7 @@
             "subject": "Science",
             "publisher": "Chunjae",
             "revision": "2015",
-            "titleImagePath": "Sprites/TextbookImages/High_Chunjae_2015_Science_Physics1"
+            "coverImagePath": "Sprites/TextbookImages/High_Chunjae_2015_Science_Physics1"
         },
         {
             "code": "High_Chunjae_2015_Science_Physics2",
@@ -36,7 +36,7 @@
             "subject": "Science",
             "publisher": "Chunjae",
             "revision": "2015",
-            "titleImagePath": "Sprites/TextbookImages/High_Chunjae_2015_Science_Physics2"
+            "coverImagePath": "Sprites/TextbookImages/High_Chunjae_2015_Science_Physics2"
         },
         {
             "code": "High_Chunjae_2015_Science_BioScience1",
@@ -45,7 +45,7 @@
             "subject": "Science",
             "publisher": "Chunjae",
             "revision": "2015",
-            "titleImagePath": "Sprites/TextbookImages/High_Chunjae_2015_Science_BioScience1"
+            "coverImagePath": "Sprites/TextbookImages/High_Chunjae_2015_Science_BioScience1"
         },
         {
             "code": "High_Chunjae_2015_Science_BioScience2",
@@ -54,7 +54,7 @@
             "subject": "Science",
             "publisher": "Chunjae",
             "revision": "2015",
-            "titleImagePath": "Sprites/TextbookImages/High_Chunjae_2015_Science_BioScience2"
+            "coverImagePath": "Sprites/TextbookImages/High_Chunjae_2015_Science_BioScience2"
         },
         {
             "code": "High_Chunjae_2015_Science_GeoScience1",
@@ -63,7 +63,7 @@
             "subject": "Science",
             "publisher": "Chunjae",
             "revision": "2015",
-            "titleImagePath": "Sprites/TextbookImages/High_Chunjae_2015_Science_GeoScience1"
+            "coverImagePath": "Sprites/TextbookImages/High_Chunjae_2015_Science_GeoScience1"
         },
         {
             "code": "High_Chunjae_2015_Science_GeoScience2",
@@ -72,7 +72,7 @@
             "subject": "Science",
             "publisher": "Chunjae",
             "revision": "2015",
-            "titleImagePath": "Sprites/TextbookImages/High_Chunjae_2015_Science_GeoScience2"
+            "coverImagePath": "Sprites/TextbookImages/High_Chunjae_2015_Science_GeoScience2"
         },
         {
             "code": "High_Chunjae_2015_Science_Chemistry1",
@@ -81,7 +81,7 @@
             "subject": "Science",
             "publisher": "Chunjae",
             "revision": "2015",
-            "titleImagePath": "Sprites/TextbookImages/High_Chunjae_2015_Science_Chemistry1"
+            "coverImagePath": "Sprites/TextbookImages/High_Chunjae_2015_Science_Chemistry1"
         },
         {
             "code": "High_Chunjae_2015_Science_Chemistry2",
@@ -90,7 +90,7 @@
             "subject": "Science",
             "publisher": "Chunjae",
             "revision": "2015",
-            "titleImagePath": "Sprites/TextbookImages/High_Chunjae_2015_Science_Chemistry2"
+            "coverImagePath": "Sprites/TextbookImages/High_Chunjae_2015_Science_Chemistry2"
         },
         {
             "code": "Middle1_Visang_2015_Science",
@@ -99,7 +99,7 @@
             "subject": "Science",
             "publisher": "Visang",
             "revision": "2015",
-            "titleImagePath": "Sprites/TextbookImages/Middle1_Visang_2015_Science"
+            "coverImagePath": "Sprites/TextbookImages/Middle1_Visang_2015_Science"
         },
         {
             "code": "Middle2_Visang_2015_Science",
@@ -108,7 +108,7 @@
             "subject": "Science",
             "publisher": "Visang",
             "revision": "2015",
-            "titleImagePath": "Sprites/TextbookImages/Middle2_Visang_2015_Science"
+            "coverImagePath": "Sprites/TextbookImages/Middle2_Visang_2015_Science"
         },
         {
             "code": "Middle3_Visang_2015_Science",
@@ -117,7 +117,7 @@
             "subject": "Science",
             "publisher": "Visang",
             "revision": "2015",
-            "titleImagePath": "Sprites/TextbookImages/Middle3_Visang_2015_Science"
+            "coverImagePath": "Sprites/TextbookImages/Middle3_Visang_2015_Science"
         }
     
     ]

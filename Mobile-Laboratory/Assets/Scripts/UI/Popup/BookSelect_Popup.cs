@@ -31,7 +31,7 @@ public class BookSelect_Popup : UI_Popup
     string bookContentName = "Books";
     string labelContentName = "Labels";
 
-    int curBook = 0;
+    int bookIndex = 0;
     
     enum Texts
     {
@@ -66,10 +66,13 @@ public class BookSelect_Popup : UI_Popup
         gradeDropdown = GetDropdown((int)Dropdowns.GradeDropdown);
 
         bookFocusImage = GetImage((int)Images.BookFocusImage);
+        bookFocusImage.gameObject.SetActive(false);
         
         selectedBookText = GetText((int)Texts.SelectedBookText);
         selectButton = GetButton((int)Buttons.SelectButton);
-        selectButton.onClick.AddListener(()=>OnClickedSelectButton());
+
+        content = Util.FindChild<Transform>(gameObject, "BookContent", true);
+        selectedBookText = GetText((int)Texts.SelectedBookText);
 
         List<TMP_Dropdown.OptionData> gradeOptions = new List<TMP_Dropdown.OptionData>();
         for(int i = 0; i < bookCode.grades.Count; i++)
@@ -78,14 +81,12 @@ public class BookSelect_Popup : UI_Popup
             gradeOptions.Add(option);
         }
 
-        selectedBookText = GetText((int)Texts.SelectedBookText);
-
         gradeDropdown.ClearOptions();
         gradeDropdown.AddOptions(gradeOptions);
-
-        content = Util.FindChild<Transform>(gameObject, "BookContent", true);
-
+        gradeDropdown.value = Managers.Data.userData.Grade;
         gradeDropdown.onValueChanged.AddListener(delegate{SetShelf();});
+
+        selectButton.onClick.AddListener(()=>OnClickedSelectButton());
 
         LoadBooks();
     }
@@ -101,6 +102,7 @@ public class BookSelect_Popup : UI_Popup
                 shelf.SetActive(false);
             }
         }
+
         SetShelf();
     }
 
@@ -135,7 +137,7 @@ public class BookSelect_Popup : UI_Popup
                 }
 
                 bookImages[itemIndex].gameObject.SetActive(true);
-                bookImages[itemIndex].sprite = bookData.books[i].titleImage;
+                bookImages[itemIndex].sprite = bookData.books[i].coverImage;
                 bookLabelTexts[itemIndex].gameObject.SetActive(true);
                 bookLabelTexts[itemIndex].text = $"{bookData.books[i].name}\n{bookData.books[i].publisher}";
 
@@ -145,12 +147,12 @@ public class BookSelect_Popup : UI_Popup
                 RectTransform rectTransform = bookImages[itemIndex].GetComponent<RectTransform>();
                 bookBtn.onClick.AddListener(()=> BookFocus(tempIter, rectTransform));
 
-                // 선택된 책 포커스
-                if(Managers.Data.userData.book.code == bookData.books[i].code)
+                // 선택된 책 포커스            
+                if (Managers.Data.userData.BookIndex == i)
                 {
                     BookFocus(tempIter, rectTransform);
                 }
-        
+                
                 searchSuccessCnt++;
             }
         }
@@ -168,25 +170,26 @@ public class BookSelect_Popup : UI_Popup
 
     void ClearShelf()
     {
+        bookFocusImage.gameObject.SetActive(false);
         for (int i = 0; i < shelfes.Count; i++)
         {
             shelfes[i].SetActive(false);
         }
     }
 
-    void BookFocus(int bookIndex, RectTransform rectTransform)
+    void BookFocus(int index, RectTransform rectTransform)
     {
         bookFocusImage.gameObject.SetActive(true);
-        curBook = bookIndex;
-        selectedBookText.text = $"{bookData.books[curBook].name}";
         bookFocusImage.transform.SetAsLastSibling();
-
-        bookFocusImage.GetComponent<RectTransform>().anchoredPosition = rectTransform.anchoredPosition;
-
+        bookIndex = index;
+        selectedBookText.text = $"{bookData.books[index].name}";
+        bookFocusImage.GetComponent<RectTransform>().position = rectTransform.position;
     }
 
     void OnClickedSelectButton()
     {
+        Managers.Data.userData.SetBookSelectData(gradeDropdown.value, bookIndex, bookData.books[bookIndex]);
+        MainScene.ui_Tracking.SetSelectImage();
         ClosePopupUI();
     }
 }
