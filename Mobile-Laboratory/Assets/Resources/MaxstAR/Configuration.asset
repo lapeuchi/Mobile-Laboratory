@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Configuration
   m_EditorClassIdentifier: 
   LicenseKey: vUXqxr9w8/MUDjh3UX/AH3Ie66Yp3lpYHjf8xPQxrqU=
-  WebcamType: 1
+  WebcamType: 0
   CameraType: 0
   CameraResolution: 1
   WearableType: 0
