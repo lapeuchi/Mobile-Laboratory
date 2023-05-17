@@ -31,13 +31,13 @@ public class Data_Books : IDataContent
                 booksObject[i].GetField("subject").stringValue,
                 booksObject[i].GetField("publisher").stringValue,
                 booksObject[i].GetField("revision").stringValue,
-                booksObject[i].GetField("titleImagePath").stringValue
+                booksObject[i].GetField("coverImagePath").stringValue
             );
             books.Add(book);
         }
     }
 
-    public struct Book
+    public class Book
     {
         public string code;
         public string name;
@@ -45,7 +45,7 @@ public class Data_Books : IDataContent
         public string subject;
         public string publisher;
         public string revision;
-        public Sprite titleImage;
+        public Sprite coverImage;
         
         public Book(string code, string name, string grade, string subject, string publisher, string revision, string titleImagePath)
         {
@@ -55,7 +55,7 @@ public class Data_Books : IDataContent
             this.subject = subject;
             this.publisher = publisher;
             this.revision = revision;
-            this.titleImage = Managers.Resource.Load<Sprite>(titleImagePath);
+            this.coverImage = Managers.Resource.Load<Sprite>(titleImagePath);
         }
     }
 }
