@@ -37,6 +37,8 @@ public class ImageTrackerSample : ARBehaviour
 
 	void Start()
 	{
+        TrackerManager.GetInstance().SetCloudRecognitionSecretIdAndSecretKey("32b41d66c3924477955...", "c40d6fbca31e4d03baa6...");
+        TrackerManager.GetInstance().StartTracker(TrackerManager.TRACKER_TYPE_CLOUD_RECOGNIZER);
 
         QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = 60;
