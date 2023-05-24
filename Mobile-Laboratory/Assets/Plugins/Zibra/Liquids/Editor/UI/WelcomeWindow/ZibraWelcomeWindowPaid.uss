@@ -1,3 +1,0 @@
-.paid-only {
-    display: flex !important;
-}

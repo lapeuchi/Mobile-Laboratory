@@ -18,10 +18,12 @@ public class Define
         Game
     }
     
+    // JSON name
     public enum DataCodes
     {
         BookData,
         BookCode,
+        Elements
     }
 
     public enum UIEvent

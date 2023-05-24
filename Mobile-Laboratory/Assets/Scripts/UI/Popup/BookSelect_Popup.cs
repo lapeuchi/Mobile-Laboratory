@@ -20,7 +20,11 @@ public class BookSelect_Popup : UI_Popup
     Button selectButton;
 
     [Header("Resources Pathes")]
-    string shelfPath = "Shelf";
+    string shelfPath = "BookShelf/Shelf";
+
+    [Header("Object Name")]
+    string bookContentName = "Books";
+    string labelContentName = "Labels";
 
     [Header("Resources Transforms")]
     Transform content;
@@ -28,8 +32,7 @@ public class BookSelect_Popup : UI_Popup
     float originContentSize = 800;
     float contentSize = 350f;
     int bookPerShelf = 4;
-    string bookContentName = "Books";
-    string labelContentName = "Labels";
+    
 
     int curBookIndex = 0;
     
@@ -99,7 +102,6 @@ public class BookSelect_Popup : UI_Popup
             selectedBookText.text = $"{bookData.books[curBookIndex].name}";
         }   
         
-
         LoadBooks();
     }
 
@@ -140,7 +142,7 @@ public class BookSelect_Popup : UI_Popup
             if(gradeValueCheck)
             {   
                 itemIndex = searchSuccessCnt % bookPerShelf;
-                if(itemIndex == 0)   
+                if(itemIndex == 0) 
                 {
                     shelfes[shelfIndex].SetActive(true);
 
@@ -150,7 +152,7 @@ public class BookSelect_Popup : UI_Popup
                     content.GetComponent<RectTransform>().sizeDelta = new Vector2(content.GetComponent<RectTransform>().sizeDelta.x, content.GetComponent<RectTransform>().sizeDelta.y + contentSize);
                     shelfIndex++;
                 }
-
+                
                 bookImages[itemIndex].gameObject.SetActive(true);
                 bookImages[itemIndex].sprite = bookData.books[i].coverImage;
                 bookLabelTexts[itemIndex].gameObject.SetActive(true);

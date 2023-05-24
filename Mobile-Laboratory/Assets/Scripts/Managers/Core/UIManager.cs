@@ -32,6 +32,11 @@ public class UIManager
         scaler.referenceResolution = resolution;
         scaler.screenMatchMode = CanvasScaler.ScreenMatchMode.Expand;
 
+        if(canvas.renderMode == RenderMode.ScreenSpaceCamera)
+        {
+            canvas.worldCamera = Camera.main;
+        }
+
         go.transform.SetParent(_root);
 
         if(sort)
