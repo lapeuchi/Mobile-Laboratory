@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Defective.JSON;
+using Data;
 
 public interface ILoader<T>
 {
@@ -17,9 +18,12 @@ public interface ILoader<TKey, TValue>
 public class DataManager
 {
     public UserData userData;
+    public Dictionary<string, TrackableImage> TrackableImages { get; private set; } = new Dictionary<string, TrackableImage>(); 
+
     public void Init()
     {
         userData = new UserData();
+        TrackableImages = new TrackableImageData().MakeDict();
     }
 
     public JSONObject LoadJsonObject(Define.DataCodes code)
@@ -32,7 +36,7 @@ public class DataManager
 
 public class UserData
 {
-    string language;    
+    string language;
     string subject;
     string publisher;
     string grade;

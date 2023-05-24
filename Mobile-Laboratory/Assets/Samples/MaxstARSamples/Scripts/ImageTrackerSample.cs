@@ -133,8 +133,7 @@ public class ImageTrackerSample : ARBehaviour
 		for (int i = 0; i < trackingResult.GetCount(); i++)
 		{
 			Trackable trackable = trackingResult.GetTrackable(i);
-			imageTrackablesMap[trackable.GetName()].OnTrackSuccess(
-				trackable.GetId(), trackable.GetName(), trackable.GetPose());
+			imageTrackablesMap[trackable.GetName()].OnTrackSuccess(trackable.GetId(), trackable.GetName(), trackable.GetPose());
 		}
 	}
 

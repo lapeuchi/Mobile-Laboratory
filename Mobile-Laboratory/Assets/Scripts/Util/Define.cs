@@ -22,6 +22,7 @@ public class Define
     {
         BookData,
         BookCode,
+        TrackableImageData,
     }
 
     public enum UIEvent

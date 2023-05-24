@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class UI_Popup : UI_Base
 {
-    
-    private void Start()
+    private void Awake()
     {
         Init();
     }

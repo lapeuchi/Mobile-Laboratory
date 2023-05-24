@@ -1,8 +1,10 @@
 using maxstAR;
 using System.Collections.Generic;
 using UnityEngine;
+using Data;
+using UnityEngine.EventSystems;
 
-public class ImageTracker : ARBehaviour
+public class ImageTrackable : ARBehaviour
 {
     List<ImageTrackableBehaviour> _trackableList = new List<ImageTrackableBehaviour>();
     CameraBackgroundBehaviour cameraBackgroundBehaviour = null;
@@ -37,6 +39,7 @@ public class ImageTracker : ARBehaviour
         ImageTrackableBehaviour[] imageTrackables = FindObjectsOfType<ImageTrackableBehaviour>();
         foreach (var trackable in imageTrackables)
         {
+            
             _trackableList.Add(trackable);
             Debug.Log("Trackable add: " + trackable.TrackableName);
         }
@@ -55,12 +58,6 @@ public class ImageTracker : ARBehaviour
             cameraBackground.gameObject.SetActive(false);
 
             WearableManager.GetInstance().GetCalibration().CreateWearableEye(Camera.main.transform);
-
-            // BT-300 screen is splited in half size, but R-7 screen is doubled.
-            if (WearableManager.GetInstance().GetDeviceController().IsSideBySideType() == true)
-            {
-                // Do something here. For example resize gui to fit ratio
-            }
         }
     }
 
@@ -105,6 +102,8 @@ public class ImageTracker : ARBehaviour
         }
     }
 
+    bool _isSuccess;
+
     void Update()
     {
         DisableAllTrackables();
@@ -118,20 +117,45 @@ public class ImageTracker : ARBehaviour
 
         cameraBackgroundBehaviour.UpdateCameraBackgroundImage(state);
 
+        if (_isSuccess)
+            return;
+
         TrackingResult trackingResult = state.GetTrackingResult();
 
         for (int i = 0; i < trackingResult.GetCount(); i++)
         {
-            Trackable trackable = trackingResult.GetTrackable(i);
+            //인식 성공한 개체
 
-            for (int idx = 0; idx < _trackableList.Count; idx++)
+            if (_isSuccess)
+                break;
+
+            Trackable trackable = trackingResult.GetTrackable(i);
+            TrackableImage imageData = Managers.Data.TrackableImages[trackable.GetId()];
+            _trackableList[i].OnTrackSuccess(trackable.GetId(), trackable.GetName(), trackable.GetPose());
+            OnSuccessByImageTracking();
+
+            if(_isSuccess)
             {
-                if (_trackableList[idx].name.Equals(trackable.GetName()))
-                {
-                    _trackableList[idx].OnTrackSuccess(trackable.GetId(), trackable.GetName(), trackable.GetPose()); ;
-                    break;
-                }
+                Managers.UI.ShowPopupUI<UI_TrackingSucessPopup>().SetInfo(imageData.name, imageData.page, OnCancleByImageTracking);
             }
+        }
+    }
+
+    public bool OnSuccessByImageTracking()
+    {
+        if (_isSuccess)
+            return true;
+
+        _isSuccess = true;
+        return true;
+    }
+
+    public void OnCancleByImageTracking(PointerEventData evtData)
+    {
+        if(_isSuccess)
+        {
+            _isSuccess = false;
+            Managers.UI.ClosePopupUI();
         }
     }
 
