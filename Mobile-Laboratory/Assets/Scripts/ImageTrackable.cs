@@ -130,6 +130,7 @@ public class ImageTrackable : ARBehaviour
                 break;
 
             Trackable trackable = trackingResult.GetTrackable(i);
+            Debug.Log(trackable.GetId());
             TrackableImage imageData = Managers.Data.TrackableImages[trackable.GetId()];
             _trackableList[i].OnTrackSuccess(trackable.GetId(), trackable.GetName(), trackable.GetPose());
             OnSuccessByImageTracking();
