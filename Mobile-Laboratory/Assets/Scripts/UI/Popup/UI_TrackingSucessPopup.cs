@@ -16,15 +16,15 @@ public class UI_TrackingSucessPopup : UI_Popup
     enum Texts
     {
         TitleText,
-        ContentText
+        ContentsText
     }
 
     public void SetInfo(string name, int page, Action<PointerEventData> cancleEvtData)
     {
-        GetText((int)Texts.TitleText).text = $"{name}실험";
-        GetText((int)Texts.ContentText).text = $"{page}p {name}실험을\n시작하시겠습니까?";
-
+        GetText((int)Texts.TitleText).text = $"{name}";
+        GetText((int)Texts.ContentsText).text = $"{page}p {name}을(를)\n하시겠습니까?";
         GetButton((int)Buttons.CancleButton).gameObject.BindEvent(cancleEvtData);
+        //GetButton((int)Buttons.ConfirmButton).gameObject.BindEvent(confirmEvtData);
     }
 
     protected override void Init()
