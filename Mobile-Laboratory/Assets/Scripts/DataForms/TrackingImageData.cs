@@ -20,18 +20,8 @@ namespace Data
         }
     }
 
-    public class TrackableImageData : ILoader<string, TrackableImage>, IDataContent
+    public class TrackableImageData : ILoader<string, TrackableImage>
     {
-        public TrackableImageData()
-        {
-            LoadData();
-        }
-
-        public void LoadData()
-        {
-            
-        }
-
         public Dictionary<string, TrackableImage> MakeDict()
         {
             JSONObject jsonObj = Managers.Data.LoadJsonObject(Define.DataCodes.TrackableImageData);

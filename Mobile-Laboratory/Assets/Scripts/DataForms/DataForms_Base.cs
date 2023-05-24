@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 namespace Data
 {
+
+
     public interface IDataContent
     {
         void LoadData();
@@ -12,7 +14,7 @@ namespace Data
     public class Data_Books : IDataContent
     {
         public List<Book> books = new List<Book>();
-
+    
         public Data_Books()
         {
             LoadData();
@@ -22,8 +24,8 @@ namespace Data
         {
             JSONObject jsonObj = Managers.Data.LoadJsonObject(Define.DataCodes.BookData);
             List<JSONObject> booksObject = jsonObj.GetField("books").list;
-
-            for (int i = 0; i < booksObject.Count; i++)
+        
+            for(int i = 0; i < booksObject.Count; i++)
             {
                 Book book = new Book
                 (
@@ -33,13 +35,13 @@ namespace Data
                     booksObject[i].GetField("subject").stringValue,
                     booksObject[i].GetField("publisher").stringValue,
                     booksObject[i].GetField("revision").stringValue,
-                    booksObject[i].GetField("titleImagePath").stringValue
+                    booksObject[i].GetField("coverImagePath").stringValue
                 );
                 books.Add(book);
             }
         }
 
-        public struct Book
+        public class Book
         {
             public string code;
             public string name;
@@ -47,8 +49,8 @@ namespace Data
             public string subject;
             public string publisher;
             public string revision;
-            public Sprite titleImage;
-
+            public Sprite coverImage;
+        
             public Book(string code, string name, string grade, string subject, string publisher, string revision, string titleImagePath)
             {
                 this.code = code;
@@ -57,7 +59,7 @@ namespace Data
                 this.subject = subject;
                 this.publisher = publisher;
                 this.revision = revision;
-                this.titleImage = Managers.Resource.Load<Sprite>(titleImagePath);
+                this.coverImage = Managers.Resource.Load<Sprite>(titleImagePath);
             }
         }
     }
@@ -72,21 +74,21 @@ namespace Data
         {
             LoadData();
         }
-
+        
         public void LoadData()
         {
             JSONObject jsonObject = Managers.Data.LoadJsonObject(Define.DataCodes.BookCode);
             List<JSONObject> gradeObjects = jsonObject.GetField("grade").list;
             List<JSONObject> publishersObjects = jsonObject.GetField("publisher").list;
             List<JSONObject> subjectsObjects = jsonObject.GetField("subject").list;
-
+            
             for (int i = 0; i < gradeObjects.Count; i++)
             {
                 BookOptionForm frm = new BookOptionForm(
                     gradeObjects[i].GetField("code").stringValue,
                     gradeObjects[i].GetField("name").stringValue
                 );
-
+                
                 grades.Add(frm);
             }
 
@@ -96,7 +98,7 @@ namespace Data
                     publishersObjects[i].GetField("code").stringValue,
                     publishersObjects[i].GetField("name").stringValue
                 );
-
+                
                 publishers.Add(frm);
             }
 
@@ -106,7 +108,7 @@ namespace Data
                     subjectsObjects[i].GetField("code").stringValue,
                     subjectsObjects[i].GetField("name").stringValue
                 );
-
+                
                 subjects.Add(frm);
             }
         }
@@ -123,4 +125,5 @@ namespace Data
             }
         }
     }
+
 }

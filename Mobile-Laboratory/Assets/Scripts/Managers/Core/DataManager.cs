@@ -35,30 +35,61 @@ public class DataManager
 }
 
 public class UserData
-{
-    string language;
-    string subject;
-    string publisher;
-    string grade;
+{   
+    public int Grade { get; private set; }
+    public int BookIndex { get; private set; }
+    public Data_Books.Book Book { get; private set; }
 
+    public float BgmVolume { get; private set; }
+    public float VfxVolume { get; private set; }
+    
     public UserData()
     {
-        GetData();
+        GetBookSelectData();
+        GetOptionData();
+    }
+    
+    public void GetBookSelectData()
+    {
+        Grade = PlayerPrefs.GetInt("grade", 0);
+        BookIndex = PlayerPrefs.GetInt("bookIndex", -1);
+        
+        if (Book == null && BookIndex != -1)
+        {
+            Data_Books data_books = new Data_Books();
+            Book = data_books.books[BookIndex];
+        }
+
+      //  Debug.Log(Grade);
+      //  Debug.Log(BookIndex);
     }
 
-    private void GetData()
+    public void GetOptionData()
     {
-        language = PlayerPrefs.GetString("language", "Kor");
-        subject = PlayerPrefs.GetString("subject", "All");
-        publisher = PlayerPrefs.GetString("grade", "All");
-        grade = PlayerPrefs.GetString("publisher", "All");
+        BgmVolume = PlayerPrefs.GetFloat("bgmVolume", 0.7f);
+        VfxVolume = PlayerPrefs.GetFloat("vfxVolume", 1.0f);
     }
 
-    private void SetData()
+    // 교과서 선택 데이터
+    public void SetBookSelectData(int grade, int bookIndex, Data_Books.Book book)
     {
-        PlayerPrefs.SetString("language", language);
-        PlayerPrefs.SetString("subject", subject);
-        PlayerPrefs.SetString("publisher", publisher);
-        PlayerPrefs.SetString("grade", grade);
+        Grade = grade;
+        BookIndex = bookIndex;
+        this.Book = book;
+
+        PlayerPrefs.SetInt("grade", grade);
+        PlayerPrefs.SetInt("bookIndex", bookIndex);
+    }
+
+    public void SetBgmVolume(float value) 
+    {
+        BgmVolume = value;
+        PlayerPrefs.SetFloat("bgmVolume", value);
+    }
+
+    public void SetVfxVolume(float value) 
+    {
+        VfxVolume = value;
+        PlayerPrefs.SetFloat("vfxVolume", value);
     }
 }

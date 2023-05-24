@@ -125,7 +125,6 @@ public class ImageTrackable : ARBehaviour
         for (int i = 0; i < trackingResult.GetCount(); i++)
         {
             //인식 성공한 개체
-
             if (_isSuccess)
                 break;
 
@@ -137,7 +136,7 @@ public class ImageTrackable : ARBehaviour
 
             if(_isSuccess)
             {
-                Managers.UI.ShowPopupUI<UI_TrackingSucessPopup>().SetInfo(imageData.name, imageData.page, OnCancleByImageTracking);
+                Managers.UI.ShowPopupUI<UI_TrackingSucessPopup>().SetInfo(imageData.name, imageData.page, OnCancleByImageTracking, delegate { InstantiateContent(); });
             }
         }
     }
@@ -149,6 +148,11 @@ public class ImageTrackable : ARBehaviour
 
         _isSuccess = true;
         return true;
+    }
+
+    public void InstantiateContent()
+    {
+
     }
 
     public void OnCancleByImageTracking(PointerEventData evtData)
