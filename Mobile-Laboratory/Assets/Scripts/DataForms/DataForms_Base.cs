@@ -4,8 +4,6 @@ using System.Collections.Generic;
 
 namespace Data
 {
-
-
     public interface IDataContent
     {
         void LoadData();

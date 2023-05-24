@@ -136,7 +136,7 @@ public class ImageTrackable : ARBehaviour
 
             if(_isSuccess)
             {
-                Managers.UI.ShowPopupUI<UI_TrackingSucessPopup>().SetInfo(imageData.name, imageData.page, OnCancleByImageTracking, delegate { InstantiateContent(); });
+                Managers.UI.ShowPopupUI<UI_TrackingSucessPopup>().SetInfo(imageData.name, imageData.page, OnCancleByImageTracking, delegate {InstantiateContent(imageData.contentPath); } );
             }
         }
     }
@@ -150,9 +150,9 @@ public class ImageTrackable : ARBehaviour
         return true;
     }
 
-    public void InstantiateContent()
+    public void InstantiateContent(string path)
     {
-
+        Managers.Resource.Instantiate(path);
     }
 
     public void OnCancleByImageTracking(PointerEventData evtData)

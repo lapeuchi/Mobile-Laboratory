@@ -7,6 +7,8 @@ using DG.Tweening;
 
 public class UI_ElementsDescriptionPopup : UI_Popup
 {
+    MeshRenderer cubeMeshRenderer;
+    string materialPath = "Materials/Contents/Content_Elements/CubeMat_";
     enum Texts
     {
         NoText,
@@ -26,6 +28,18 @@ public class UI_ElementsDescriptionPopup : UI_Popup
         BindText(typeof(Texts), true);
         BindButton(typeof(Buttons), true);
 
+        GetButton((int)Buttons.CloseButton).onClick.AddListener(delegate { Destroy(Content_Elements.instance.actor); ClosePopupUI(); });
+       
+        Content_Elements.instance.InstantiateActor($"Contents/Content_Elements/ElementCube", transform);
+        cubeMeshRenderer = Content_Elements.instance.actor.GetComponent<MeshRenderer>();
+        
+        base.Init();
+
+        Load();
+    }
+
+    void Load()
+    {
         Data_Element.ElementForm data = Content_Elements.instance.elementData.elements[Content_Elements.instance.focusElementIndex];
         GetText((int)Texts.NoText).text = data.number;
         GetText((int)Texts.CodeText).text = data.code;
@@ -34,13 +48,7 @@ public class UI_ElementsDescriptionPopup : UI_Popup
         GetText((int)Texts.MetalText).text = data.metal;
         GetText((int)Texts.DescriptionText).text = data.description;
 
-        GetButton((int)Buttons.CloseButton).onClick.AddListener(delegate { Destroy(MainScene.instance.actor); ClosePopupUI(); });
-       
-        MainScene.instance.InstantiateActor($"Contents/Content_Elements/Cubes/Cube_{Content_Elements.instance.focusElementIndex+1}", Content_Elements.instance.transform);
-        MainScene.instance.actor.AddComponent<DragToRotate>();
-       
-        base.Init();
-    
+        cubeMeshRenderer.material = Managers.Resource.Load<Material>($"{materialPath}{Content_Elements.instance.focusElementIndex+1}");
     }
 
 

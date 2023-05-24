@@ -11,12 +11,14 @@ namespace Data
         public string id;
         public string name;
         public int page;
+        public string contentPath;
 
-        public TrackableImage(string id, string name, int page)
+        public TrackableImage(string id, string name, int page, string contentPath)
         {
             this.id = id;
             this.name = name;
             this.page = page;
+            this.contentPath = contentPath;
         }
     }
 
@@ -34,7 +36,8 @@ namespace Data
                 (
                     data.GetField("id").stringValue,
                     data.GetField("name").stringValue,
-                    data.GetField("page").intValue
+                    data.GetField("page").intValue,
+                    data.GetField("contentPath").stringValue
                 );
 
                 trackableDict.Add(trackableImage.id, trackableImage);
