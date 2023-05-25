@@ -45,9 +45,6 @@ public class MainScene : BaseScene
         else
         {
             ui_Tracking = Managers.UI.ShowSceneUI<UI_Tracking>();
-        }
-
-        
-    }
-    
+        }   
+    }   
 }
