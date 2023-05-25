@@ -10,41 +10,18 @@ public class MainScene : BaseScene
     public UI_Content ui_Content;
     ImageTrackable imageTrackable;
 
-    
-    Define.ModeState mode;
-    public Define.ModeState Mode 
-    {
-        get {return mode;}
-        set 
-        {
-            switch (value)
-            {
-                case Define.ModeState.Tracking:
-                imageTrackable.enabled = true;
-                break;
-                case Define.ModeState.Content:
-                imageTrackable.enabled = false;
-                break;
-            }
-
-            mode = value;
-        }
-    }
-
     protected override void Init()
     {
         base.Init();
         instance = this;
         imageTrackable = GameObject.Find("ARCamera").GetComponent<ImageTrackable>();
 
-
+        ui_Tracking = Managers.UI.ShowSceneUI<UI_Tracking>();
+        
         if(Managers.Data.userData.Book == null)
         {
             Managers.UI.ShowPopupUI<BookSelect_Popup>();
         }
-        else
-        {
-            ui_Tracking = Managers.UI.ShowSceneUI<UI_Tracking>();
-        }   
+        
     }   
 }

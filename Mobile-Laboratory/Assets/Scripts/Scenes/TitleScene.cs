@@ -11,6 +11,7 @@ public class TitleScene : BaseScene
 
     protected override void Init()
     {
+        PlayerPrefs.DeleteAll();
         base.Init();
         sceneUI = Managers.UI.ShowSceneUI<UI_TitleScene>();
 
