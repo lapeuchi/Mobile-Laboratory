@@ -32,6 +32,8 @@ public class UI_TrackingSucessPopup : UI_Popup
         base.Init();
         BindButton(typeof(Buttons));
         BindText(typeof(Texts));
+
+        MainScene.instance.Mode = Define.ModeState.Content;
     }
 
     void OnClickConfirmButton()

@@ -152,6 +152,7 @@ public class ImageTrackable : ARBehaviour
 
     public void InstantiateContent(string path)
     {
+        
         Managers.Resource.Instantiate(path);
     }
 

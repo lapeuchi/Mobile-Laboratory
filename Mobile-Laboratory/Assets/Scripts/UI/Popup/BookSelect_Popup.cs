@@ -60,6 +60,7 @@ public class BookSelect_Popup : UI_Popup
     protected override void Init()
     {
         base.Init();
+        MainScene.instance.Mode = Define.ModeState.Content;
         BindButton(typeof(Buttons), true);
         BindText(typeof(Texts), true);
         BindDropdown(typeof(Dropdowns), true);
@@ -217,7 +218,7 @@ public class BookSelect_Popup : UI_Popup
     {
         //Debug.Log("book Number: "+curBookIndex);
         Managers.Data.userData.SetBookSelectData(gradeDropdown.value, curBookIndex, bookData.books[curBookIndex]);
-        MainScene.ui_Tracking.SetSelectImage();
+        MainScene.instance.ui_Tracking.SetSelectImage();
         ClosePopupUI();
     }
 }

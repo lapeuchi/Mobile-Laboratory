@@ -11,6 +11,12 @@ public class Define
         MaxCount
     }
 
+    public enum ModeState
+    {
+        Tracking,
+        Content,
+    }
+    
     public enum Scene
     {
         Unknow,
