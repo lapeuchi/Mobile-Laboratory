@@ -13,7 +13,7 @@ public class UI_SettingPopup : UI_Popup
 
     enum Buttons
     {
-        CloseButton,
+        ClosePopupButton,
         QuitAppButton,
 
     }
@@ -34,8 +34,9 @@ public class UI_SettingPopup : UI_Popup
         
         vfxVolumeSlider.onValueChanged.AddListener(delegate { Managers.Data.userData.SetBgmVolume(vfxVolumeSlider.value); });
         bgmVolumeSlider.onValueChanged.AddListener(delegate { Managers.Data.userData.SetBgmVolume(bgmVolumeSlider.value); });
-        GetButton((int)Buttons.CloseButton).onClick.AddListener(delegate { ClosePopupUI(); });
-       
+        
+        GetButton((int)Buttons.ClosePopupButton).onClick.AddListener(delegate { ClosePopupUI(); });
+        GetButton((int)Buttons.QuitAppButton).onClick.AddListener(delegate { Application.Quit(); });
     }
 
     
