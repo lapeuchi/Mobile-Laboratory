@@ -11,15 +11,25 @@ public class Content : MonoBehaviour
     void Awake()
     {
         Init();
-        actorTransform = GameObject.Find("ActorPos").transform;
-        actorCam = GameObject.Find("ActorCam").GetComponent<Camera>();
     }
     
     protected virtual void Init()
     {
-        
+        actorTransform = GameObject.Find("ActorPos").transform;
+        actorCam = GameObject.Find("ActorCam").GetComponent<Camera>();
+        MainScene.IsPlayingContent = true;
+    }
+
+    private void OnDestroy()
+    {
+        Clear();
     }
     
+    protected virtual void Clear()
+    {
+        MainScene.IsPlayingContent = false;
+    }
+
     public void InstantiateActor(string path, Transform parent)
     {
         actor = Managers.Resource.Instantiate(path, actorTransform.position, Quaternion.identity);

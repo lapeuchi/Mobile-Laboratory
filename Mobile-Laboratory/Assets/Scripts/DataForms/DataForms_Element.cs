@@ -27,6 +27,7 @@ public class Data_Element : IDataContent
                 elementObjects[i].GetField("group").stringValue,
                 elementObjects[i].GetField("period").stringValue,
                 elementObjects[i].GetField("metal").stringValue,
+                elementObjects[i].GetField("metal_eng").stringValue,
                 elementObjects[i].GetField("description").stringValue
             );
             elements.Add(element);
@@ -41,9 +42,10 @@ public class Data_Element : IDataContent
         public string group;
         public string period;
         public string metal;
+        public string metal_eng;
         public string description;
         
-        public ElementForm(string code, string number, string name, string group, string period, string metal, string description)
+        public ElementForm(string code, string number, string name, string group, string period, string metal, string metal_eng, string description)
         {
             this.code = code;
             this.number = number;
@@ -51,6 +53,7 @@ public class Data_Element : IDataContent
             this.group = group;
             this.period = period;
             this.metal = metal;
+            this.metal_eng = metal_eng;
             this.description = description;
         }
     }

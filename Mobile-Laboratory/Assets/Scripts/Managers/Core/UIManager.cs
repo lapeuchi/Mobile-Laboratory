@@ -67,7 +67,7 @@ public class UIManager
 
         if (go == null)
             return null;
-
+        
         T sceneUI = go.GetOrAddComponent<T>();
         SceneUI = sceneUI;
         return sceneUI;

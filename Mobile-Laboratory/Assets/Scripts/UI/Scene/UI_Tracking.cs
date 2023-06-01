@@ -32,7 +32,7 @@ public class UI_Tracking : UI_Scene
         bookSelectImage = GetImage((int)Images.BookSelectImage);
 
         SetSelectImage();
-        bookSelectButton.onClick.AddListener(delegate { Managers.UI.ShowPopupUI<BookSelect_Popup>(); });
+        bookSelectButton.onClick.AddListener(delegate { Managers.UI.ShowPopupUI<UI_BookSelect_Popup>(); });
         GetButton((int)Buttons.SettingButton).onClick.AddListener(delegate { Managers.UI.ShowPopupUI<UI_SettingPopup>(); });
     }
 

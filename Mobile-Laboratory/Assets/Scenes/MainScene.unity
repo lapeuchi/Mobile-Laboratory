@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 51c16bfc6491e4dfe81ec7906012c8a2, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: 6cc8932bdba924696a561be7a43be27b, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -4188,6 +4188,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 64000013029301144, guid: c11a1b8316f425e469028acee630d862, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 64000013029301144, guid: c11a1b8316f425e469028acee630d862, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c11a1b8316f425e469028acee630d862, type: 3}
 --- !u!1 &705507993
@@ -6883,8 +6891,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4b2e1f7315741d990198e4c86c439d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ui_Tracking: {fileID: 0}
-  ui_Content: {fileID: 0}
 --- !u!4 &1078798040
 Transform:
   m_ObjectHideFlags: 0

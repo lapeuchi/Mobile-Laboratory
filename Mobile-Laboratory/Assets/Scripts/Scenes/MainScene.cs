@@ -4,23 +4,26 @@ using UnityEngine;
 
 public class MainScene : BaseScene
 {
-    public static MainScene instance;
-
-    public UI_Tracking ui_Tracking;
-    public UI_Content ui_Content;
     ImageTrackable imageTrackable;
+
+    private static bool isPlayingContent;
+    public static bool IsPlayingContent 
+    {
+        get { return isPlayingContent; }
+        set { isPlayingContent = value; }
+    }
 
     protected override void Init()
     {
         base.Init();
-        instance = this;
+        
         imageTrackable = GameObject.Find("ARCamera").GetComponent<ImageTrackable>();
-
-        ui_Tracking = Managers.UI.ShowSceneUI<UI_Tracking>();
+        
+        Managers.UI.ShowSceneUI<UI_Tracking>();
         
         if(Managers.Data.userData.Book == null)
         {
-            Managers.UI.ShowPopupUI<BookSelect_Popup>();
+            Managers.UI.ShowPopupUI<UI_BookSelect_Popup>();
         }
         
     }   

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SoundManager
 {
-    AudioSource[] audioSources = new AudioSource[(int)Define.Sound.MaxCount - 1];
+    AudioSource[] audioSources = new AudioSource[(int)Define.Sound.MaxCount /*- 1*/];
     Dictionary<string, AudioClip> audioClips = new Dictionary<string, AudioClip>();
 
     public void Init()
@@ -27,6 +27,9 @@ public class SoundManager
         }
 
         audioSources[(int)Define.Sound.BGM].loop = true;
+        
+        audioSources[(int)Define.Sound.BGM].volume = Managers.Data.userData.BGMVolume;
+        audioSources[(int)Define.Sound.SFX].volume = Managers.Data.userData.SFXVolume;
     }
 
     public AudioSource GetAudioSorce(Define.Sound type)

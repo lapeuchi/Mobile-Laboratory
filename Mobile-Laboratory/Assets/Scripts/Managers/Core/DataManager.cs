@@ -40,8 +40,26 @@ public class UserData
     public int BookIndex { get; private set; }
     public Data_Books.Book Book { get; private set; }
 
-    public float BgmVolume { get; private set; }
-    public float VfxVolume { get; private set; }
+    private float bgmVolume;
+    public float BGMVolume 
+    { 
+        get { return bgmVolume; }
+        set
+        {
+            bgmVolume = value;
+            PlayerPrefs.SetFloat("bgmVolume", value);
+        }
+    }
+    private float vfxVolume;
+    public float SFXVolume
+    {
+        get { return vfxVolume; }
+        set
+        {
+            vfxVolume = value;
+            PlayerPrefs.SetFloat("vfxVolume", value);
+        }
+    }
     
     public UserData()
     {
@@ -66,8 +84,8 @@ public class UserData
 
     public void GetOptionData()
     {
-        BgmVolume = PlayerPrefs.GetFloat("bgmVolume", 0.7f);
-        VfxVolume = PlayerPrefs.GetFloat("vfxVolume", 1.0f);
+        BGMVolume = PlayerPrefs.GetFloat("bgmVolume", 0.7f);
+        SFXVolume = PlayerPrefs.GetFloat("sfxVolume", 1.0f);
     }
 
     // 교과서 선택 데이터
@@ -81,15 +99,15 @@ public class UserData
         PlayerPrefs.SetInt("bookIndex", bookIndex);
     }
 
-    public void SetBgmVolume(float value) 
-    {
-        BgmVolume = value;
-        PlayerPrefs.SetFloat("bgmVolume", value);
-    }
+    // public void SetBGMVolume(float value) 
+    // {
+    //     BgmVolume = value;
+    //     PlayerPrefs.SetFloat("bgmVolume", value);
+    // }
 
-    public void SetVfxVolume(float value) 
-    {
-        VfxVolume = value;
-        PlayerPrefs.SetFloat("vfxVolume", value);
-    }
+    // public void SetSFXVolume(float value) 
+    // {
+    //     VfxVolume = value;
+    //     PlayerPrefs.SetFloat("sfxVolume", value);
+    // }
 }
