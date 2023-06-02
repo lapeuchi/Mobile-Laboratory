@@ -1,16 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using System;
 
 public class MainScene : BaseScene
 {
     ImageTrackable imageTrackable;
-
-    private static bool isPlayingContent;
-    public static bool IsPlayingContent 
+    public UI_MainScene ui_MainScene;
+    
+    public Define.ModeState mode;
+    public Define.ModeState Mode
     {
-        get { return isPlayingContent; }
-        set { isPlayingContent = value; }
+        get {return mode;}
+        set 
+        { 
+            mode = value;
+            ui_MainScene.ChangeUIMode(mode);
+            if(mode == Define.ModeState.Content)
+            {
+                imageTrackable.enabled = false;
+            }
+            else
+            {
+                imageTrackable.enabled = true;
+            }
+        }
     }
 
     protected override void Init()
@@ -19,12 +34,19 @@ public class MainScene : BaseScene
         
         imageTrackable = GameObject.Find("ARCamera").GetComponent<ImageTrackable>();
         
-        Managers.UI.ShowSceneUI<UI_Tracking>();
-        
+        ui_MainScene = Managers.UI.ShowSceneUI<UI_MainScene>();
+        Mode = Define.ModeState.Tracking;
+
         if(Managers.Data.userData.Book == null)
         {
             Managers.UI.ShowPopupUI<UI_BookSelect_Popup>();
         }
         
     }   
+
+    public static void InstantiateContent(Data.TrackableImage imageData)
+    {
+        Managers.UI.ShowPopupUI<UI_TrackingSucessPopup>().SetInfo (imageData);
+    } 
+
 }

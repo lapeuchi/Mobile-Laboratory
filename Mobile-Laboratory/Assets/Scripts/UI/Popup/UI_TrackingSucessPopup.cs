@@ -19,12 +19,16 @@ public class UI_TrackingSucessPopup : UI_Popup
         ContentsText
     }
 
-    public void SetInfo(string name, int page, Action<PointerEventData> cancleEvtData, Action<PointerEventData> confirmEvtData)
+    public void SetInfo(Data.TrackableImage imageData)
     {
-        GetText((int)Texts.TitleText).text = $"{name}";
-        GetText((int)Texts.ContentsText).text = $"{page}p {name}";//을(를)\n하시겠습니까?";
-        GetButton((int)Buttons.CancleButton).gameObject.BindEvent(cancleEvtData);
-        GetButton((int)Buttons.ConfirmButton).gameObject.BindEvent(confirmEvtData);
+        GetText((int)Texts.TitleText).text = $"{imageData.name}";
+        GetText((int)Texts.ContentsText).text = $"{imageData.page}p {imageData.name}";//을(를)\n하시겠습니까?";
+       
+       // GetButton((int)Buttons.CancleButton).gameObject.BindEvent(delegate { OnClickCancelButton(); });
+       // GetButton((int)Buttons.ConfirmButton).gameObject.BindEvent(delegate { OnClickConfirmButton(); } );
+  
+        GetButton((int)Buttons.CancleButton).onClick.AddListener(delegate { OnClickCancelButton(); });
+        GetButton((int)Buttons.ConfirmButton).onClick.AddListener(delegate { OnClickConfirmButton(imageData.contentPath); } );
     }
 
     protected override void Init()
@@ -34,8 +38,14 @@ public class UI_TrackingSucessPopup : UI_Popup
         BindText(typeof(Texts));
     }
 
-    void OnClickConfirmButton()
+    void OnClickConfirmButton(string path)
     {
+        Managers.Resource.Instantiate(path);
+    }
 
+    void OnClickCancelButton()
+    {
+        GameObject.FindObjectOfType<ImageTrackable>().OnCancleByImageTracking();
+        ClosePopupUI();
     }
 }

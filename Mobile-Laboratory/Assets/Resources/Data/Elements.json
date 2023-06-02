@@ -1297,6 +1297,7 @@
             "group": "18",
             "period": "7",
             "metal": "비금속",
+            "metal_eng": "non-metal",
             "description": "탄소 맛있다."
         }
     ]

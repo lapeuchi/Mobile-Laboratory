@@ -7,6 +7,9 @@ public class Content : MonoBehaviour
     Camera actorCam;
     public Transform actorTransform;
     public GameObject actor;
+    public MainScene mainScene;
+
+    public bool isPaused;
 
     void Awake()
     {
@@ -15,19 +18,20 @@ public class Content : MonoBehaviour
     
     protected virtual void Init()
     {
+        mainScene = GameObject.FindObjectOfType<MainScene>();
+        mainScene.Mode = Define.ModeState.Content;
+
         actorTransform = GameObject.Find("ActorPos").transform;
         actorCam = GameObject.Find("ActorCam").GetComponent<Camera>();
-        MainScene.IsPlayingContent = true;
+        
+        
+        isPaused = false;
     }
 
-    private void OnDestroy()
-    {
-        Clear();
-    }
-    
     protected virtual void Clear()
     {
-        MainScene.IsPlayingContent = false;
+        mainScene.Mode = Define.ModeState.Tracking;
+        Destroy(gameObject);
     }
 
     public void InstantiateActor(string path, Transform parent)
@@ -35,5 +39,25 @@ public class Content : MonoBehaviour
         actor = Managers.Resource.Instantiate(path, actorTransform.position, Quaternion.identity);
         actor.transform.LookAt(actorCam.transform);
         actor.transform.SetParent(parent);
+    }
+
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Space)) SetPause(!isPaused);
+    }
+
+    public void SetPause(bool active)
+    {
+        if (active)
+        {
+            isPaused = true;
+            Time.timeScale = 0;
+        }
+        else
+        {
+            isPaused = false;
+            Time.timeScale = 1;
+        }
+        
     }
 }

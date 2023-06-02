@@ -36,7 +36,7 @@ public class UI_BookSelect_Popup : UI_Popup
 
     int curBookIndex = 0;
     
-    UI_Tracking ui_Tracking;
+    UI_MainScene ui_Tracking;
 
     enum Texts
     {
@@ -104,7 +104,7 @@ public class UI_BookSelect_Popup : UI_Popup
             selectedBookText.text = $"{bookData.books[curBookIndex].name}";
         }   
 
-        ui_Tracking = GameObject.FindObjectOfType<UI_Tracking>();
+        ui_Tracking = GameObject.FindObjectOfType<UI_MainScene>();
         
         LoadBooks();
     }

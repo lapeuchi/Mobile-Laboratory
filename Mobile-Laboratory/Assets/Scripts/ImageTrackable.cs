@@ -102,7 +102,7 @@ public class ImageTrackable : ARBehaviour
         }
     }
 
-    bool _isSuccess;
+    public bool _isSuccess;
 
     void Update()
     {
@@ -136,7 +136,15 @@ public class ImageTrackable : ARBehaviour
 
             if(_isSuccess)
             {
-                Managers.UI.ShowPopupUI<UI_TrackingSucessPopup>().SetInfo(imageData.name, imageData.page, OnCancleByImageTracking, delegate {InstantiateContent(imageData.contentPath); } );
+
+                MainScene.InstantiateContent(imageData);
+              
+                // Managers.UI.ShowPopupUI<UI_TrackingSucessPopup>().SetInfo(
+                //     imageData.name, 
+                //     imageData.page, 
+                //     OnCancleByImageTracking, 
+                //     delegate {InstantiateContent(imageData.contentPath); 
+                // } );
             }
         }
     }
@@ -150,13 +158,12 @@ public class ImageTrackable : ARBehaviour
         return true;
     }
 
-    public void InstantiateContent(string path)
-    {
-        
-        Managers.Resource.Instantiate(path);
-    }
+    // public void InstantiateContent(string path)
+    // {
+    //     Managers.Resource.Instantiate(path);
+    // }
 
-    public void OnCancleByImageTracking(PointerEventData evtData)
+    public void OnCancleByImageTracking(/*PointerEventData evtData*/)
     {
         if(_isSuccess)
         {
