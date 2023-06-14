@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
 
-public class Content_DropBaloon : Content_Experiment
+public class Content_DropBalloon : Content_Experiment
 {
     
     protected override void Init()
