@@ -7601,8 +7601,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1269472214}
   - component: {fileID: 1269472215}
+  - component: {fileID: 1269472216}
   m_Layer: 0
-  m_Name: Content_Elem
+  m_Name: Content_DropBalloon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7637,12 +7638,31 @@ PlayableDirector:
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
-  - key: {fileID: -2891200317698176895, guid: 6c464a0595bf9443b8e1a95fd136982c, type: 2}
+  - key: {fileID: -5335236723144699361, guid: 6c464a0595bf9443b8e1a95fd136982c, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -7910297107919864055, guid: 6c464a0595bf9443b8e1a95fd136982c, type: 2}
     value: {fileID: 0}
   m_ExposedReferences:
     m_References:
     - dfaab84587b384e0a81844b153ce380a: {fileID: 0}
     - 6402d775f67eb4eed8c45f20e646a989: {fileID: 0}
+--- !u!114 &1269472216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1269472213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb46882a42f574126b55c07bab9fa06b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actorTransform: {fileID: 0}
+  actor: {fileID: 0}
+  mainScene: {fileID: 0}
+  isPaused: 0
+  director: {fileID: 0}
 --- !u!1 &1279535677
 GameObject:
   m_ObjectHideFlags: 0
