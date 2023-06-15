@@ -31,7 +31,7 @@ public class WaterBalloon : MonoBehaviour
 
     private void OnCollisionEnter(Collision other) 
     {
-        if(other.gameObject.CompareTag("Collision"))
+        if(other.gameObject.CompareTag("ProjectileTarget"))
         {
 
         }

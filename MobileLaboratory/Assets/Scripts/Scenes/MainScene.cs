@@ -1,3 +1,6 @@
+#define Debug
+//#define Release
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,10 +12,9 @@ public class MainScene : BaseScene
     ImageTrackable imageTrackable;
     public UI_MainScene ui_MainScene;
 
-    
     public Define.ModeState mode;
     public Define.ModeState Mode
-    {
+    {   
         get {return mode;}
         set 
         { 
@@ -29,6 +31,10 @@ public class MainScene : BaseScene
         }
     }
 
+    #if DEBUG
+    [SerializeField] string TestContent;
+    #endif
+
     protected override void Init()
     {
         base.Init();
@@ -41,9 +47,23 @@ public class MainScene : BaseScene
         if(Managers.Data.userData.Book == null)
         {
             Managers.UI.ShowPopupUI<UI_BookSelect_Popup>();
+        }   
+    }
+    
+    void Start()
+    {
+        #if Debug
+        InstantiateContent();
+        #endif        
+    }
+    
+    public void InstantiateContent()
+    {
+        if(TestContent != null)
+        {
+            Managers.Resource.Instantiate($"Contents/{TestContent}");
         }
-        
-    }   
+    }
 
     public static void InstantiateContent(Data.TrackableImage imageData)
     {

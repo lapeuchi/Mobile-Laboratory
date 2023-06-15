@@ -19,6 +19,7 @@ public class UI_ExperimentPopup : UI_Popup
     }
     
     Content_Experiment content;
+    bool isPaused = false;
 
     protected override void Init()
     {   
@@ -31,21 +32,25 @@ public class UI_ExperimentPopup : UI_Popup
         GetButton((int)Buttons.PrevButton).onClick.AddListener(delegate { OnClickedPrevButton(); } );
         GetButton((int)Buttons.NextButton).onClick.AddListener(delegate { OnClickedNextButton(); } );
     }
-
+    
     void OnClickedPlay()
     {
-        if(content.director.state == PlayState.Paused)
+        if(isPaused == false)
         {
-            content.director.Resume();
+            isPaused = true;
+            Debug.Log("Play");
+            // content.director.Resume();
             GetImage((int)Images.PlayButton).color = Color.yellow;
         }
         else
         {
-            content.director.Stop();
+            isPaused = false;
+            Debug.Log("Pause");
+            // content.director.Stop();
             GetImage((int)Images.PlayButton).color = Color.cyan;
         }
     }
-
+    
     void OnClickedPrevButton()
     {
         
