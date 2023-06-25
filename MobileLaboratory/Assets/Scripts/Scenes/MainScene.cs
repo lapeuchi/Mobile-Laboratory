@@ -61,7 +61,7 @@ public class MainScene : BaseScene
     {
         if(TestContent != null)
         {
-            Managers.Resource.Instantiate($"Contents/{TestContent}");
+            Managers.Resource.Instantiate($"Contents/{TestContent}/{TestContent}");
         }
     }
 

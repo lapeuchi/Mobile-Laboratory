@@ -8,21 +8,23 @@ public class Content_Base : MonoBehaviour
     public Transform actorTransform;
     public GameObject actor;
     public MainScene mainScene;
-
+    public UI_ContentPopup contentUI;
 
     void Awake()
     {
-        Managers.UI.ShowPopupUI<UI_ContentPopup>();
+        mainScene = FindObjectOfType<MainScene>();
+        mainScene.Mode = Define.ModeState.Content;
+
+        actorTransform = GameObject.Find("ActorPos").transform;
+        actorCam = GameObject.Find("ActorCam").GetComponent<Camera>();
         Init();
     }
     
     protected virtual void Init()
     {
-        mainScene = GameObject.FindObjectOfType<MainScene>();
-        mainScene.Mode = Define.ModeState.Content;
+        
 
-        actorTransform = GameObject.Find("ActorPos").transform;
-        actorCam = GameObject.Find("ActorCam").GetComponent<Camera>();
+        contentUI = Managers.UI.ShowPopupUI<UI_ContentPopup>();
         
     }
 
@@ -38,6 +40,5 @@ public class Content_Base : MonoBehaviour
         actor.transform.LookAt(actorCam.transform);
         actor.transform.SetParent(parent);
     }
-
     
 }

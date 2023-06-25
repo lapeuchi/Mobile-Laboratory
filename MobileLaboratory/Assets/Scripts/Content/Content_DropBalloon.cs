@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
 
-// 물풍선을 이용해 운동량과 충격량의 관계 알아보기
+// ???????? ?????? ???????? ???????? ???? ????????
 public class Content_DropBalloon : Content_Experiment
 {
     GameObject balloon;
     Rigidbody balloonRigidbody;
-    GameObject plane;
+    GameObject floor;
 
     float excersice;
     float height;
@@ -16,19 +16,45 @@ public class Content_DropBalloon : Content_Experiment
 
     protected override void Init()
     {
+        maxProgress = 2;
         base.Init();
-        InstantiateActor("Contents/Content_DropBalloon/ExperimentSet", transform);
     }
 
-    protected override void SetProgress(int progress)
+    protected override void SetProgress()
     {
-        switch (progress)
-        {
-            case 1:
+        base.SetProgress();
 
+        switch (Progress)
+        {
+            case 0:
+                InstantiateActor("Contents/Content_DropBalloon/ExperimentSet", transform);
+                balloon = GameObject.Find("Balloon");
+                balloonRigidbody = balloon.GetComponent<Rigidbody>();
+                balloonRigidbody.isKinematic = true;
+                floor = GameObject.Find("Plane");
+                break;
+            case 1:
+                balloonRigidbody.isKinematic = false;
                 break;
         }
+    }
 
-        base.SetProgress(progress);
+    protected override void ProgressUpdate()
+    {
+        base.ProgressUpdate();
+
+        switch (Progress)
+        {
+            case 0:
+                InstantiateActor("Contents/Content_DropBalloon/ExperimentSet", transform);
+                balloon = GameObject.Find("Balloon");
+                balloonRigidbody = balloon.GetComponent<Rigidbody>();
+                balloonRigidbody.isKinematic = true;
+                floor = GameObject.Find("Plane");
+                break;
+            case 1:
+                balloonRigidbody.isKinematic = false;
+                break;
+        }
     }
 }
