@@ -9,7 +9,6 @@ public class Content_Base : MonoBehaviour
     public GameObject actor;
     public MainScene mainScene;
 
-    public bool isPaused;
 
     void Awake()
     {
@@ -25,7 +24,6 @@ public class Content_Base : MonoBehaviour
         actorTransform = GameObject.Find("ActorPos").transform;
         actorCam = GameObject.Find("ActorCam").GetComponent<Camera>();
         
-        isPaused = false;
     }
 
     public virtual void Clear()
@@ -41,22 +39,5 @@ public class Content_Base : MonoBehaviour
         actor.transform.SetParent(parent);
     }
 
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Space)) SetPause(!isPaused);
-    }
-
-    public void SetPause(bool active)
-    {
-        if (active)
-        {
-            isPaused = true;
-            Time.timeScale = 0;
-        }
-        else
-        {
-            isPaused = false;
-            Time.timeScale = 1;
-        }
-    }
+    
 }
