@@ -11,6 +11,7 @@ public class DragToRotate : MonoBehaviour
     [SerializeField] private bool invertX;
     [SerializeField] private bool invertY;
     [SerializeField] private bool touchAnywhere;
+
     private float m_previousX;
     private float m_previousY;
     private Camera m_camera;
@@ -55,11 +56,13 @@ public class DragToRotate : MonoBehaviour
             var touch = Input.mousePosition;
             var deltaX = -(Input.mousePosition.y - m_previousY) * rotationRate;
             var deltaY = -(Input.mousePosition.x - m_previousX) * rotationRate;
-            if(!yRotation) deltaX = 0;
-            if(!xRotation) deltaY = 0;
+
             if (invertX) deltaY *= -1;
             if (invertY) deltaX *= -1;
-            transform.Rotate(deltaX, deltaY, 0, Space.Self);
+            if(!yRotation) deltaX = 0;
+            if(!xRotation) deltaY = 0;
+
+            transform.Rotate(deltaX, deltaY, 0, Space.World);
             
             m_previousX = Input.mousePosition.x;
             m_previousY = Input.mousePosition.y;

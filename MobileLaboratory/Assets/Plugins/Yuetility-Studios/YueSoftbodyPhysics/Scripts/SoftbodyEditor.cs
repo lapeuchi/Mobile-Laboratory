@@ -37,7 +37,7 @@ namespace YuetilitySoftbody
             {
                 EditorGUILayout.LabelField("Change Values in Edit Mode");
             }
-
+            
             EditorGUILayout.LabelField("\n");
             EditorGUILayout.LabelField("Vertex Tuning", EditorStyles.boldLabel);
             softbodyPhysics.tuning.PositionProportional = EditorGUILayout.FloatField("Proportinal Velocity Factor", softbodyPhysics.tuning.PositionProportional);

@@ -19,6 +19,6 @@ public class Balloon : MonoBehaviour
     
     private void OnCollisionEnter(Collision other)
     {
-        
+        GetComponentInParent<Content_Experiment>().IsComplete = true;
     }
 }

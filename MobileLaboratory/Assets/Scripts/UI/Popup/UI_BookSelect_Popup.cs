@@ -22,7 +22,7 @@ public class UI_BookSelect_Popup : UI_Popup
 
     [Header("Resources Pathes")]
     string shelfPath = "BookShelf/Shelf";
-
+    
     [Header("Object Name")]
     string bookContentName = "Books";
     string labelContentName = "Labels";

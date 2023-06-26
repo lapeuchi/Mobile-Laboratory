@@ -23,7 +23,6 @@ public class UI_PeriodicTablePopup : UI_Popup
     Color nonMetalColor = new Color(1, 0.9f, 0);
     Color metalloidColor = new Color(1, 0.5f, 0);
 
-
     protected override void Init()
     {   
         BindImage(typeof(Images), true);
@@ -33,7 +32,6 @@ public class UI_PeriodicTablePopup : UI_Popup
         GetImage((int)Images.MetalloidColorImage).color = metalloidColor;
 
         content = GameObject.FindObjectOfType<Content_Elements>();
-
 
         for(int i = 0; i < Content_Elements.MaxElement; i++)
         {
@@ -75,6 +73,6 @@ public class UI_PeriodicTablePopup : UI_Popup
     {
         // Debug.Log($"Selected Element number: {n}");
         content.FocusElementIndex = n;
-        Managers.UI.ShowPopupUI<UI_ElementsDescriptionPopup>();
+        Managers.UI.ShowPopupUI<UI_ElementsDescriptionPopup>().transform.SetParent(content.transform);
     }
 }

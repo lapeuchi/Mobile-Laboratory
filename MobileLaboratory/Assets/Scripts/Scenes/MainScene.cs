@@ -11,51 +11,56 @@ public class MainScene : BaseScene
 {
     ImageTrackable imageTrackable;
     public UI_MainScene ui_MainScene;
-
+    
     public Define.ModeState mode;
     public Define.ModeState Mode
     {   
-        get {return mode;}
+        get { return mode; }
         set 
         { 
             mode = value;
             if(mode == Define.ModeState.Content)
             {
                 imageTrackable.enabled = false;
+                //Camera.main.enabled = false;
+                //Camera.main.gameObject.SetActive(false);
+                ui_MainScene.gameObject.SetActive(false);
             }
             else
             {
+                //Camera.main.enabled = true;
                 imageTrackable.enabled = true;
                 imageTrackable._isSuccess = false;
+                //Camera.main.gameObject.SetActive(true);
+                ui_MainScene.gameObject.SetActive(true);
             }
         }
     }
 
-    #if DEBUG
+#if DEBUG
     [SerializeField] string TestContent;
-    #endif
+#endif
 
     protected override void Init()
     {
-        base.Init();
-        
+        ui_MainScene = Managers.UI.ShowSceneUI<UI_MainScene>();
         imageTrackable = GameObject.Find("ARCamera").GetComponent<ImageTrackable>();
         
-        ui_MainScene = Managers.UI.ShowSceneUI<UI_MainScene>();
         Mode = Define.ModeState.Tracking;
 
         if(Managers.Data.userData.Book == null)
         {
             Managers.UI.ShowPopupUI<UI_BookSelect_Popup>();
         }   
+        base.Init();
     }
     
+#if Debug
     void Start()
     {
-        #if Debug
-        InstantiateContent();
-        #endif        
+        InstantiateContent();  
     }
+#endif
     
     public void InstantiateContent()
     {

@@ -38,14 +38,12 @@ public class UI_SettingPopup : UI_Popup
         vfxEvtEntry.eventID = EventTriggerType.PointerUp;
         vfxEvtEntry.callback.AddListener(delegate { Managers.Data.userData.SFXVolume = sfxSlider.value; Managers.Sound.GetAudioSorce(Define.Sound.SFX).volume = Managers.Data.userData.SFXVolume; });
         vfxEvtTrigger.triggers.Add(vfxEvtEntry);
-
+        
         EventTrigger bgmEvtTrigger = Util.GetOrAddComponent<EventTrigger>(bgmSlider.gameObject);
         EventTrigger.Entry bgmEvtEntry = new EventTrigger.Entry();
         bgmEvtEntry.eventID = EventTriggerType.PointerUp;
         bgmEvtEntry.callback.AddListener(delegate { Managers.Data.userData.BGMVolume = bgmSlider.value; Managers.Sound.GetAudioSorce(Define.Sound.BGM).volume = Managers.Data.userData.BGMVolume; });
         bgmEvtTrigger.triggers.Add(bgmEvtEntry);
 
-        
     }
-
 }

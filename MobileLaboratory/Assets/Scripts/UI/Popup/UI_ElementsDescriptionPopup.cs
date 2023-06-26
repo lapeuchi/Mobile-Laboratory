@@ -7,8 +7,7 @@ using DG.Tweening;
 
 public class UI_ElementsDescriptionPopup : UI_Popup
 {
-    MeshRenderer cubeMeshRenderer;
-    string materialPath = "Materials/Contents/Content_Elements/CubeMat_";
+    
     enum Texts
     {
         NoText,
@@ -25,6 +24,7 @@ public class UI_ElementsDescriptionPopup : UI_Popup
         NextButton,
         
     }
+
     Content_Elements content;
 
     protected override void Init()
@@ -32,12 +32,9 @@ public class UI_ElementsDescriptionPopup : UI_Popup
         BindText(typeof(Texts), true);
         BindButton(typeof(Buttons), true);
 
-        GetButton((int)Buttons.CloseButton).onClick.AddListener(delegate { Destroy(content.actor); ClosePopupUI(); });
+        GetButton((int)Buttons.CloseButton).onClick.AddListener(delegate { ClosePopupUI(); });
         
         content = GameObject.FindObjectOfType<Content_Elements>();
-
-        content.InstantiateActor($"Contents/Content_Elements/ElementCube", transform);
-        cubeMeshRenderer = content.actor.GetComponent<MeshRenderer>();
         
         GetButton((int)Buttons.PrevButton).onClick.AddListener(delegate { 
             content.FocusElementIndex--; 
@@ -54,7 +51,6 @@ public class UI_ElementsDescriptionPopup : UI_Popup
 
         Load();
 
-        
     }
 
     void Load()
@@ -66,8 +62,6 @@ public class UI_ElementsDescriptionPopup : UI_Popup
         GetText((int)Texts.GridPosText).text = $"{data.group}족 {data.period}주기";
         GetText((int)Texts.MetalText).text = data.metal;
         //GetText((int)Texts.DescriptionText).text = data.description;
-        cubeMeshRenderer.material = Managers.Resource.Load<Material>($"{materialPath}{content.FocusElementIndex+1}");
-
         
     }
 }

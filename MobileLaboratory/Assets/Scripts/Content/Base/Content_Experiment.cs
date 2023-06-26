@@ -35,11 +35,11 @@ public class Content_Experiment : Content_Base
             return _isComplete;
         }
 
-        private set
+        set
         {
             _isComplete = value;
             if (Progress > 0 && Progress < maxProgress)
-                contentUI.SetNextProgressButton(value);
+                contentUI.ActiveNextProgressButton();
         }
     }
     
@@ -81,7 +81,7 @@ public class Content_Experiment : Content_Base
                 Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
                 {
                     contentUI.DoPlayStartTextTweening();
-                    Progress = 1;
+                    
                 }
                 break;
             case 1:

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
 
-// ???????? ?????? ???????? ???????? ???? ????????
 public class Content_DropBalloon : Content_Experiment
 {
     GameObject balloon;
@@ -19,7 +18,8 @@ public class Content_DropBalloon : Content_Experiment
         maxProgress = 2;
         base.Init();
     }
-
+    
+    // 0은 초기화만(Instantiate, find, getcomponent, ...)
     protected override void SetProgress()
     {
         base.SetProgress();
@@ -27,7 +27,6 @@ public class Content_DropBalloon : Content_Experiment
         switch (Progress)
         {
             case 0:
-                InstantiateActor("Contents/Content_DropBalloon/ExperimentSet", transform);
                 balloon = GameObject.Find("Balloon");
                 balloonRigidbody = balloon.GetComponent<Rigidbody>();
                 balloonRigidbody.isKinematic = true;
@@ -46,14 +45,10 @@ public class Content_DropBalloon : Content_Experiment
         switch (Progress)
         {
             case 0:
-                InstantiateActor("Contents/Content_DropBalloon/ExperimentSet", transform);
-                balloon = GameObject.Find("Balloon");
-                balloonRigidbody = balloon.GetComponent<Rigidbody>();
-                balloonRigidbody.isKinematic = true;
-                floor = GameObject.Find("Plane");
+                
                 break;
             case 1:
-                balloonRigidbody.isKinematic = false;
+
                 break;
         }
     }

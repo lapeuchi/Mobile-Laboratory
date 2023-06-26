@@ -11,7 +11,7 @@ namespace YuetilitySoftbody
         public Transform TransTraget;
         [HideInInspector]
         public Vector3 Tensor = Vector3.one * 0.1f;
-
+        
         public float PositionProportional = 100f;
         public float PositionDerivative = 10f;
 
