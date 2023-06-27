@@ -18,7 +18,7 @@ public class Content_Base : MonoBehaviour
     
     protected virtual void Init()
     {
-        contentUI = Managers.UI.ShowPopupUI<UI_ContentPopup>();   
+        contentUI = Managers.UI.ShowPopupUI<UI_ContentPopup>();
     }
 
     public virtual void Clear()

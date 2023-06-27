@@ -61,13 +61,14 @@ public class Content_Experiment : Content_Base
         switch (Progress)
         {
             case 0:
-                 
+                //Init
                 break;
                 
             case 1:
                 
                 break;
         }
+
         if(Progress > 0) contentUI.HighlightProgressButton(Progress-1);
         
     }
@@ -77,8 +78,7 @@ public class Content_Experiment : Content_Base
         switch (Progress)
         {
             case 0:
-                if (Input.GetMouseButtonDown(0) ||
-                Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+                if (Input.GetMouseButtonDown(0) || Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
                 {
                     contentUI.DoPlayStartTextTweening();
                     

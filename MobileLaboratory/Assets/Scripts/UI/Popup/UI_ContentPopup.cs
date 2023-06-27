@@ -43,9 +43,11 @@ public class UI_ContentPopup : UI_Popup
     protected override void Init()
     {
         content = FindObjectOfType<Content_Base>();
+        
+        bool isExperimentContent = content.GetComponent<Content_Experiment>();
 
-        bool isExperimentContent = content is Content_Experiment;
         transform.Find("Experiment").gameObject.SetActive(isExperimentContent);
+
         BindButton(typeof(Buttons), isExperimentContent);
         BindText(typeof(Texts), isExperimentContent);
         BindObject(typeof(Objects), isExperimentContent);
@@ -71,7 +73,6 @@ public class UI_ContentPopup : UI_Popup
         }
         
         GetButton((int)Buttons.CloseButton).onClick.AddListener(OnClickedCloseButton);
-
         base.Init();
     }
 
