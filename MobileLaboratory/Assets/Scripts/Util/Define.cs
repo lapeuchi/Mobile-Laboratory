@@ -37,4 +37,10 @@ public class Define
     {
         Click
     }
+
+    public enum Fall
+    {
+        FreeFall,
+        VerticalFall
+    }
 }
