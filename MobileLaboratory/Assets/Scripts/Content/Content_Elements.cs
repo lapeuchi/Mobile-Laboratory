@@ -6,12 +6,10 @@ public class Content_Elements : Content_Base
 {   
     public Data_Element elementData;
     public const int MaxElement = 118; // 118
-
     private int focusElementIndex;
-    
     MeshRenderer cubeMeshRenderer;
     string materialPath = "Materials/Contents/Content_Elements/CubeMat_";
-    
+
     public int FocusElementIndex
     {
         get { return focusElementIndex; }
@@ -30,7 +28,6 @@ public class Content_Elements : Content_Base
         
         cubeSet.position = GameObject.Find("Lab").transform.position + new Vector3(0, 2, -0.2f);
         
-
         elementData = new Data_Element();
         FocusElementIndex = 0;
         Managers.UI.ShowPopupUI<UI_PeriodicTablePopup>().transform.SetParent(transform);

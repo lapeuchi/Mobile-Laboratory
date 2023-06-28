@@ -13,7 +13,7 @@ public class UI_ContentPopup : UI_Popup
         CloseButton,
         NextProgressButton
         // experiment items
-
+        
     }
     Button[] progressBtns;
     enum Texts
@@ -85,6 +85,7 @@ public class UI_ContentPopup : UI_Popup
             delegate
             {
                 ++experimentContent.Progress;
+                
                 GetButton((int)Buttons.NextProgressButton).gameObject.SetActive(false);
             });
         

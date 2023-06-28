@@ -22,16 +22,14 @@ public class MainScene : BaseScene
             if(mode == Define.ModeState.Content)
             {
                 imageTrackable.enabled = false;
-                //Camera.main.enabled = false;
-                //Camera.main.gameObject.SetActive(false);
+                Camera.main.gameObject.SetActive(false);
                 ui_MainScene.gameObject.SetActive(false);
             }
             else
             {
-                //Camera.main.enabled = true;
                 imageTrackable.enabled = true;
                 imageTrackable._isSuccess = false;
-                //Camera.main.gameObject.SetActive(true);
+                Camera.main.gameObject.SetActive(true);
                 ui_MainScene.gameObject.SetActive(true);
             }
         }

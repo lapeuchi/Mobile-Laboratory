@@ -34,20 +34,27 @@ public class Content_Experiment : Content_Base
         {
             return _isComplete;
         }
-
+        
         set
         {
             _isComplete = value;
-            if (Progress > 0 && Progress < maxProgress)
-                contentUI.ActiveNextProgressButton();
+            if (IsComplete)
+            {
+                if (Progress > 0 && Progress < maxProgress)
+                    contentUI.ActiveNextProgressButton();
+            }
+            
         }
     }
     
     protected override void Init()
     {
-        IsComplete = false;
-        Progress = 0;
         base.Init();
+    }
+    void Start() 
+    {
+        Progress = 0;
+        IsComplete = false;
     }
 
     private void Update()
@@ -58,6 +65,7 @@ public class Content_Experiment : Content_Base
     // 진행별 초기화 함	
     protected virtual void SetProgress()
     {
+        IsComplete = false;
         switch (Progress)
         {
             case 0:

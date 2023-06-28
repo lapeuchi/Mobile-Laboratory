@@ -12,7 +12,6 @@ public interface ILoader<T>
 public interface ILoader<TKey, TValue>
 {
     Dictionary<TKey, TValue> MakeDict();
-
 }
 
 public class DataManager
@@ -29,13 +28,14 @@ public class DataManager
     public JSONObject LoadJsonObject(Define.DataCodes code)
     {
         string jsonString = Managers.Resource.Load<TextAsset>($"Data/{code.ToString()}").ToString();
-        JSONObject jsonObj = new JSONObject(jsonString);   
+        JSONObject jsonObj = new JSONObject(jsonString);
         return jsonObj;
     }
+
 }
 
 public class UserData
-{   
+{
     public int Grade { get; private set; }
     public int BookIndex { get; private set; }
     public Data_Books.Book Book { get; private set; }
@@ -50,6 +50,7 @@ public class UserData
             PlayerPrefs.SetFloat("bgmVolume", value);
         }
     }
+    
     private float vfxVolume;
     public float SFXVolume
     {
