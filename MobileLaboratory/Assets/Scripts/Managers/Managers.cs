@@ -26,7 +26,7 @@ public class Managers : MonoBehaviour
     public static void SetActiveToCamera(bool active)
     {
         if (_arCamera == null)
-            _arCamera = FindObjectOfType<ImageTrackable>().gameObject;
+            _arCamera = GameObject.Find("ARCamera");
 
         _arCamera.SetActive(active);
     }

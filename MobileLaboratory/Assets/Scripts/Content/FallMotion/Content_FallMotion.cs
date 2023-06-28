@@ -12,7 +12,6 @@ public class Content_FallMotion : Content_Experiment
     protected override void Init()
     {
         maxProgress = 3;
-        Managers.SetActiveToCamera(false);
         base.Init();
     }
 
