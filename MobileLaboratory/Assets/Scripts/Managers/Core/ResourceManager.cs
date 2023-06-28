@@ -27,11 +27,7 @@ public class ResourceManager
         GameObject go = null;
         
         go = Object.Instantiate(origin, parents);
-        
-        int index = go.name.IndexOf("(Clone)");
-        if (index > 0)
-            go.name.Substring(0, index);
-
+        go.name = origin.name;
         return go;
     }
 
