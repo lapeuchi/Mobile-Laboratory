@@ -40,7 +40,7 @@ public class Define
 
     public enum Fall
     {
-        FreeFall,
-        VerticalFall
+        FreeDrop,
+        VerticalDrop
     }
 }

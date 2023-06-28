@@ -24,10 +24,11 @@ public class Content_Experiment : Content_Base
             SetProgress();
         }
     }
+
     public int maxProgress;
     public bool isPaused;
-
     bool _isComplete;
+    
     public bool IsComplete
     {
         get
@@ -70,7 +71,6 @@ public class Content_Experiment : Content_Base
         }
 
         if(Progress > 0) contentUI.HighlightProgressButton(Progress-1);
-        
     }
 
     protected virtual void ProgressUpdate()

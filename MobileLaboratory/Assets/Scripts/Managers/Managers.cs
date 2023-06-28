@@ -21,6 +21,16 @@ public class Managers : MonoBehaviour
     public static SoundManager Sound { get { return Instance._sound; } }
     public static UIManager UI { get { return Instance._ui; } }
 
+    static GameObject _arCamera;
+
+    public static void SetActiveToCamera(bool active)
+    {
+        if (_arCamera == null)
+            _arCamera = FindObjectOfType<ImageTrackable>().gameObject;
+
+        _arCamera.SetActive(active);
+    }
+
     void Start()
     {
         Init();    
