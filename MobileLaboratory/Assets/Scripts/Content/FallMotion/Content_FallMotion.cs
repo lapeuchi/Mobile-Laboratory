@@ -75,7 +75,7 @@ public class Content_FallMotion : Content_Experiment
         {
             case 2:
                 if(IsArrive())
-                    Progress = 3;
+                    IsComplete = true;
                 break;
             case 3:
                 IsComplete = true;

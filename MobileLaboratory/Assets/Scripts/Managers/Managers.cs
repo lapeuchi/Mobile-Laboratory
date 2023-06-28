@@ -13,7 +13,7 @@ public class Managers : MonoBehaviour
     SceneManagerEx _scene = new SceneManagerEx();
     SoundManager _sound = new SoundManager();
     UIManager _ui = new UIManager();
-
+    
     public static DataManager Data { get { return Instance._data; } }
     public static GameManager Game { get { return Instance._game; } }
     public static ResourceManager Resource { get { return Instance._resource; } }
