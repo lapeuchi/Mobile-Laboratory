@@ -1,6 +1,4 @@
-#define Debug
-//#define Release
-
+//#define Debug
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,7 +9,7 @@ public class MainScene : BaseScene
 {
     ImageTrackable imageTrackable;
     public UI_MainScene ui_MainScene;
-    
+
     public Define.ModeState mode;
     public Define.ModeState Mode
     {   
@@ -34,8 +32,8 @@ public class MainScene : BaseScene
             }
         }
     }
-
-#if DEBUG
+    
+#if Debug
     [SerializeField] string TestContent;
 #endif
 
@@ -53,13 +51,14 @@ public class MainScene : BaseScene
         base.Init();
     }
     
-#if Debug
+
     void Start()
     {
+#if Debug
         InstantiateContent();  
-    }
 #endif
-    
+    }
+#if Debug
     public void InstantiateContent()
     {
         if(TestContent != null)
@@ -67,6 +66,8 @@ public class MainScene : BaseScene
             Managers.Resource.Instantiate($"Contents/{TestContent}/{TestContent}");
         }
     }
+#endif
+
 
     public static void InstantiateContent(Data.TrackableImage imageData)
     {

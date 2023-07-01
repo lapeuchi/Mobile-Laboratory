@@ -30,7 +30,9 @@ public class Define
         BookCode,
         TrackableImageData,
 
-        Elements
+        Elements,
+        FallBall_Experiment,
+        DropBalloon_Experiment
     }
 
     public enum UIEvent

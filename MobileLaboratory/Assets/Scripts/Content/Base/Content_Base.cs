@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Content_Base : MonoBehaviour
 {
-   
     public MainScene mainScene;
     public UI_ContentPopup contentUI;
 
@@ -12,18 +11,20 @@ public class Content_Base : MonoBehaviour
     {
         mainScene = FindObjectOfType<MainScene>();
         mainScene.Mode = Define.ModeState.Content;
-       
+        contentUI = Managers.UI.ShowPopupUI<UI_ContentPopup>();
+
         Init();
     }
     
     protected virtual void Init()
     {
-        contentUI = Managers.UI.ShowPopupUI<UI_ContentPopup>();
+       
     }
 
     public virtual void Clear()
     {
         mainScene.Mode = Define.ModeState.Tracking;
+        contentUI.ClosePopupUI();
         Destroy(gameObject);
     }
     

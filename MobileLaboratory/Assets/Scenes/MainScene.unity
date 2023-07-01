@@ -457,7 +457,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ui_MainScene: {fileID: 0}
   mode: 0
-  TestContent: Content_FallMotion
 --- !u!4 &1078798040
 Transform:
   m_ObjectHideFlags: 0

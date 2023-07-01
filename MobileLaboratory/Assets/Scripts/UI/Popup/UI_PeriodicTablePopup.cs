@@ -74,5 +74,8 @@ public class UI_PeriodicTablePopup : UI_Popup
         // Debug.Log($"Selected Element number: {n}");
         content.FocusElementIndex = n;
         Managers.UI.ShowPopupUI<UI_ElementsDescriptionPopup>().transform.SetParent(content.transform);
+        
     }
+    
+    
 }

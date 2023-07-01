@@ -11,9 +11,9 @@ public class UI_ContentPopup : UI_Popup
     {
         // normal items
         CloseButton,
-        NextProgressButton
+        NextProgressButton,
+        CompleteButton
         // experiment items
-        
     }
     Button[] progressBtns;
     enum Texts
@@ -56,40 +56,60 @@ public class UI_ContentPopup : UI_Popup
         if (isExperimentContent)
         {
             experimentContent = content.GetComponent<Content_Experiment>();
-            progressBtns = new Button[experimentContent.maxProgress];
-            for(int i = 0; i < experimentContent.maxProgress; i++)
-            {
-                Button progressBtn = Managers.Resource.Instantiate("UI/Item/ProgressButton", GetObject((int)Objects.ProgressBtnGroup).transform).GetComponent<Button>();
-                int tmp = i;
-                progressBtn.onClick.AddListener(delegate 
-                { 
-                    experimentContent.Progress = tmp+1;
-                    HighlightProgressButton(tmp);
-                });
-                progressBtn.GetComponentInChildren<TMP_Text>().text = $"{tmp+1}";
-                progressBtns[i] = progressBtn; 
-            }
+            
             GetButton((int)Buttons.NextProgressButton).gameObject.SetActive(false);
+            GetButton((int)Buttons.CompleteButton).onClick.AddListener(OnClickedCompleteButton);
+            GetButton((int)Buttons.CompleteButton).gameObject.SetActive(false);
         }
         
         GetButton((int)Buttons.CloseButton).onClick.AddListener(OnClickedCloseButton);
         base.Init();
     }
 
-    // 다음 단계 이동 버튼 활성화
-    public void ActiveNextProgressButton()
+    public void CreateProgressButton()
     {
-        GetButton((int)Buttons.NextProgressButton).gameObject.SetActive(true);
-        GetButton((int)Buttons.NextProgressButton).onClick.RemoveAllListeners();
-        GetButton((int)Buttons.NextProgressButton).onClick.AddListener(
+        progressBtns = new Button[experimentContent.MaxProgress];
+        //Debug.Log("Max: "+progressBtns.Length);
+        for(int i = 0; i < experimentContent.MaxProgress; i++)
+        {
+            //Debug.Log("das: " + i);
+            Button progressBtn = Managers.Resource.Instantiate("UI/Item/ProgressButton", GetObject((int)Objects.ProgressBtnGroup).transform).GetComponent<Button>();
+            int tmp = i;
+            progressBtn.onClick.AddListener(delegate 
+            { 
+                experimentContent.Progress = tmp+1;
+                HighlightProgressButton(tmp);
+            });
+            progressBtn.GetComponentInChildren<TMP_Text>().text = $"{tmp+1}";
+            progressBtns[i] = progressBtn; 
+        }
+    }
+
+    // 다음 단계 이동 버튼 활성화
+    public void SetActiveNextProgressButton(bool active)
+    {
+        if(active)
+        {   
+            GetButton((int)Buttons.NextProgressButton).gameObject.SetActive(true);
+            GetButton((int)Buttons.NextProgressButton).onClick.RemoveAllListeners();
+            GetButton((int)Buttons.NextProgressButton).onClick.AddListener(
             delegate
             {
                 ++experimentContent.Progress;
                 
                 GetButton((int)Buttons.NextProgressButton).gameObject.SetActive(false);
-            });
-        
-        
+            }
+        );
+        }
+        else 
+        {
+            GetButton((int)Buttons.NextProgressButton).gameObject.SetActive(false);
+        }
+    }
+
+    public void SetActiveCompleteButton(bool active)
+    {
+        GetButton((int)Buttons.CompleteButton).gameObject.SetActive(active);
     }
 
     public void HighlightProgressButton(int index)
@@ -99,7 +119,7 @@ public class UI_ContentPopup : UI_Popup
             progressBtns[lastIndex].image.color = Color.white;
             progressBtns[lastIndex].image.transform.DOScale(originProgressSize, 0.2f);
         }
-        
+        //Debug.Log("btn index: "+index);
         progressBtns[index].image.color = highlightColor;
         progressBtns[index].image.transform.DOScale(toProgressSize, 0.2f);
         lastIndex = index;
@@ -107,10 +127,13 @@ public class UI_ContentPopup : UI_Popup
 
     public void DoPlayStartTextTweening()
     {   
-        
         GetText((int)Texts.StartText).transform.DOShakePosition(0.3f, Vector3.up * 20, 2).OnComplete (
         delegate {
-                GetText((int)Texts.StartText).transform.DOScaleY(0, 0.2f);
+                GetText((int)Texts.StartText).transform.DOScaleY(0, 0.2f).OnComplete(
+                    delegate {
+                        Destroy(GetText((int)Texts.StartText));
+                    }
+                );
             }
         );
         GetImage((int)Images.StartFadeImage).DOFade(0, 0.5f).OnComplete (   
@@ -123,11 +146,17 @@ public class UI_ContentPopup : UI_Popup
 
     void OnClickedCloseButton()
     {  
+        ClosePopupUI();
         if (content)
         {
             content.Clear();
         }        
-        ClosePopupUI();
+        
+    }
+
+    void OnClickedCompleteButton()
+    {
+        UI_ExperimentResult_Popup d = Managers.UI.ShowPopupUI<UI_ExperimentResult_Popup>();
     }
 
 }

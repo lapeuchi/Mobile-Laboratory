@@ -6,7 +6,7 @@ using UnityEngine.Playables;
 using UnityEngine.Events;
 
 // 실험형 컨텐츠 (과정에 따라 흘러가는 실험의 부모클래스)
-public class Content_Experiment : Content_Base
+public abstract class Content_Experiment : Content_Base
 {
     int _progress;
     
@@ -19,14 +19,23 @@ public class Content_Experiment : Content_Base
         set
         {
             _progress = value;
-            if (value > maxProgress)
-                _progress = maxProgress;
+            if (value > MaxProgress)
+                _progress = MaxProgress;
             SetProgress();
         }
     }
 
-    public int maxProgress;
-    public bool isPaused;
+    public int _maxProgress;
+    public int MaxProgress
+    {
+        get { return _maxProgress; }
+        set 
+        {  
+            _maxProgress = value;
+            contentUI.CreateProgressButton(); 
+        }
+    }
+    
     bool _isComplete;
     
     public bool IsComplete
@@ -39,62 +48,55 @@ public class Content_Experiment : Content_Base
         set
         {
             _isComplete = value;
-            if (IsComplete)
+            if (value)
             {
-                if (Progress > 0 && Progress < maxProgress)
-                    contentUI.ActiveNextProgressButton();
+                if (Progress > 0 && Progress <= MaxProgress)
+                {
+                    OnCompletedProgress();
+                    if (Progress == MaxProgress)
+                        contentUI.SetActiveCompleteButton(true);
+                    
+                }
             }
-            
+            else
+            {
+                contentUI.SetActiveCompleteButton(false);
+            }
         }
     }
+
+    public Define.DataCodes ResultCode;
     
     protected override void Init()
     {
         base.Init();
-    }
-    void Start() 
-    {
         Progress = 0;
         IsComplete = false;
     }
 
     private void Update()
     {
-        ProgressUpdate();
+        if(Progress >= 1)
+        {
+            ProgressUpdate();
+        }
+        else
+        {
+            if (Input.GetMouseButtonDown(0) || Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+            {
+                contentUI.DoPlayStartTextTweening();
+            }
+        }
     }
 
     // 진행별 초기화 함	
     protected virtual void SetProgress()
     {
         IsComplete = false;
-        switch (Progress)
-        {
-            case 0:
-                //Init
-                break;
-                
-            case 1:
-                
-                break;
-        }
-
-        if(Progress > 0) contentUI.HighlightProgressButton(Progress-1);
+        if(Progress >= 1) contentUI.HighlightProgressButton(Progress-1);
     }
 
-    protected virtual void ProgressUpdate()
-    {
-        switch (Progress)
-        {
-            case 0:
-                if (Input.GetMouseButtonDown(0) || Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
-                {
-                    contentUI.DoPlayStartTextTweening();
-                    
-                }
-                break;
-            case 1:
-
-                break;
-        }
-    }
+    protected virtual void ProgressUpdate() { }
+    
+    protected abstract void OnCompletedProgress();
 }

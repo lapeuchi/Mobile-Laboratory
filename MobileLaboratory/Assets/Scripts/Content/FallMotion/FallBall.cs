@@ -29,7 +29,7 @@ public class FallBall : MonoBehaviour
     {
         _rigid = GetComponent<Rigidbody>();
         _rigid.isKinematic = true;
-
+        
         //OnFire();
         _currentTime = _exitTime;
         _mat = GetComponent<Renderer>().material;
@@ -48,12 +48,11 @@ public class FallBall : MonoBehaviour
             
             if (_count == _maxCount)
             {
-                Destroy(_rigid);
-                enabled = false;
+                _rigid.isKinematic = true;
                 _isArrive = true;
             }
 
-            GameObject go = Managers.Resource.Instantiate("Contents/Content_FallMotion/AfterImage");
+            GameObject go = Managers.Resource.Instantiate("Contents/Content_FreeFallMotion/AfterImage");
             go.transform.position = transform.position;
             go.transform.parent = _root;
 

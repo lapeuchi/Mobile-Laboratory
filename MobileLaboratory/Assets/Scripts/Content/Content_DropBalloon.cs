@@ -2,18 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
+using DG.Tweening;
 
 public class Content_DropBalloon : Content_Experiment
 {
-    Rigidbody balloonRigidbody;
-
+    Balloon balloon;
+    
     GameObject plane;
-
+    public GameObject cusion;
     float Excersice;
 
-    public float[] heightArray = new float[3] { 1.0f, 2.0f, 3.0f };
+    private float[] heightArray = new float[3] { 0.5f, 1.0f, 2.0f };
     int _heightLevel;
-    public float height;
+    private float height;
+
     public int HeightLevel
     {
         get { return _heightLevel; }
@@ -23,12 +25,14 @@ public class Content_DropBalloon : Content_Experiment
             if (_heightLevel <= 0) _heightLevel = 0;
             else if (_heightLevel >= heightArray.Length) _heightLevel = heightArray.Length-1;
             height = heightArray[_heightLevel];
-            SetBalloon();
+            
+            ui.SetHeightText(height);
         }
     }
 
-    float[] massArray = new float[3] { 0.1f, 0.5f, 1.0f };
-    public float mass;
+    float[] sizeArray = new float[3] {0.3f, 0.6f, 0.9f};
+    float[] massArray = new float[3] { 1f, 1.5f, 2f };
+    private float mass;
     int _massLevel;
     public int MassLevel
     {
@@ -39,45 +43,55 @@ public class Content_DropBalloon : Content_Experiment
             if (_massLevel <= 0) _massLevel = 0;
             else if (_massLevel >= massArray.Length) _massLevel = heightArray.Length-1;
             mass = massArray[_massLevel];
-            SetBalloon();
+            
+            ui.SetMassText(mass);
         }
     }
     
     UI_Balloon_Popup ui;
     protected override void Init()
     {
-        maxProgress = 2;
+        MaxProgress = 2;
+        ResultCode = Define.DataCodes.DropBalloon_Experiment;
+        plane = GameObject.Find("Plane");
+        balloon = GameObject.Find("Balloon").GetComponent<Balloon>();
+        cusion = GameObject.Find("Cusion");
+        ui = FindObjectOfType<UI_Balloon_Popup>().GetComponent<UI_Balloon_Popup>();
+
         base.Init();
     }
 
-    protected override void SetProgress()
+    void Start() 
     {
-        base.SetProgress();
-        
+        balloon.p = 0;
+        balloon.i = 0;
+        MassLevel = 0;
+        HeightLevel = 0;
+        balloon.rigid.isKinematic = true;
+    }
+
+    protected override void SetProgress()
+    {        
         switch (Progress)
         {
-            case 0:
-                ui = FindObjectOfType<UI_Balloon_Popup>().GetComponent<UI_Balloon_Popup>();
-                ui.ActiveButtons(false);
-                Transform contentSet = transform.Find("Content");
-                contentSet.SetParent(transform);
-                contentSet.position = GameObject.Find("Lab").transform.position + new Vector3(0, 2, -0.2f);
-        
-                plane = GameObject.Find("Plane");
-                balloonRigidbody = GameObject.Find("Balloon").GetComponent<Rigidbody>();
-                balloonRigidbody.isKinematic = true;
-                SetBalloon();
-                break;
             case 1:
                 ui.ActiveButtons(true);
-                balloonRigidbody.isKinematic = true;
-                SetBalloon();
+                balloon.gameObject.SetActive(true);
+                balloon.rigid.isKinematic = true;
+                SetBalloonHeight(false);
+                SetBalloonMass(false);
+                balloon.isChecked = false;
                 break;
             case 2:
                 ui.ActiveButtons(false);
-                balloonRigidbody.isKinematic = false;
+                balloon.gameObject.SetActive(true);
+                SetBalloonHeight(false);
+                SetBalloonMass(false);
+                balloon.isChecked = false;
+                balloon.rigid.isKinematic = false;
                 break;
         }
+        base.SetProgress();
     }
 
     protected override void ProgressUpdate()
@@ -86,18 +100,62 @@ public class Content_DropBalloon : Content_Experiment
         
         switch (Progress)
         {
-            case 0:
-                
-                break;
+           
             case 1:
 
                 break;
         }
     }
 
-    public void SetBalloon()
+    protected override void OnCompletedProgress()
     {
-        balloonRigidbody.transform.position = new Vector3(plane.transform.position.x, heightArray[HeightLevel]+plane.transform.position.y, plane.transform.position.z);
-        balloonRigidbody.mass = massArray[MassLevel];
+        switch (Progress)
+        {
+            case 2: 
+                ui.ActiveResult(true, balloon.p, balloon.i);
+                break;
+        }
+    }
+
+    public void SetBalloonHeight(bool playAnim)
+    {
+        float destY = heightArray[HeightLevel]+plane.transform.position.y;
+        if(playAnim)
+        {
+            balloon.transform.DOMoveY(destY, 0.3f);
+        }
+        else
+        {
+            balloon.transform.position =
+            new Vector3 (
+                plane.transform.position.x, 
+                destY,
+                plane.transform.position.z
+            );
+        }
+        
+    }
+
+    public void SetBalloonMass(bool playAnim)
+    {
+        balloon.rigid.mass = massArray[MassLevel];
+        float scale = sizeArray[MassLevel];
+        if(playAnim)
+        {
+            balloon.transform.DOScale(scale, 0.2f);
+        }
+        else
+        {       
+            balloon.transform.localScale = new Vector3(scale, scale, scale);
+        }
+        
+    } 
+
+    public override void Clear()
+    {
+        base.Clear();
+        ui.ClosePopupUI();
+        Destroy(ui.gameObject);
     }
 }
+
