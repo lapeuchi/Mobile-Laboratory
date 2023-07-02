@@ -550,7 +550,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5961345703088079157
 RectTransform:
   m_ObjectHideFlags: 0
@@ -729,7 +729,7 @@ RectTransform:
   m_GameObject: {fileID: 2810781143832302424}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children:
   - {fileID: 6034593164469633870}
   - {fileID: 196535117978504118}
@@ -740,7 +740,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1006, y: -29.7}
+  m_AnchoredPosition: {x: 987.1, y: -29.7}
   m_SizeDelta: {x: 109.33316, y: 240.56549}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2825309428373577551
@@ -886,7 +886,7 @@ RectTransform:
   m_GameObject: {fileID: 3434657181241539604}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children:
   - {fileID: 2470923787562894919}
   - {fileID: 7399426314578249842}
@@ -2113,7 +2113,7 @@ RectTransform:
   m_GameObject: {fileID: 6357782483081120474}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children:
   - {fileID: 2648510252965721317}
   m_Father: {fileID: 5961345703088079157}
@@ -2121,8 +2121,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 871.33, y: -55.9}
-  m_SizeDelta: {x: 160, y: 40}
+  m_AnchoredPosition: {x: 809.5, y: -55.9}
+  m_SizeDelta: {x: 173.9, y: 63.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &356715226228900421
 CanvasRenderer:
@@ -2423,8 +2423,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 28.5
+  m_fontSizeBase: 28.5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
