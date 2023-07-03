@@ -1,0 +1,746 @@
+.mediaViewInfo {
+	--web-view-name: 웹 1920 – 1;
+	--web-view-id: n_1920__1;
+	--web-scale-on-resize: true;
+	--web-enable-deep-linking: true;
+}
+:root {
+	--web-view-ids: n_1920__1;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	border: none;
+}
+#n_1920__1 {
+	position: absolute;
+	width: 1920px;
+	height: 4673px;
+	background-color: rgba(255,255,255,1);
+	overflow: hidden;
+	--web-view-name: 웹 1920 – 1;
+	--web-view-id: n_1920__1;
+	--web-scale-on-resize: true;
+	--web-enable-deep-linking: true;
+}
+#n___ {
+	left: 172.115px;
+	top: 792px;
+	position: absolute;
+	overflow: visible;
+	width: 153px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Apple SD Gothic Neo;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 24px;
+	color: rgba(0,0,0,1);
+	text-transform: uppercase;
+}
+#n_1 {
+	fill: rgba(132,132,132,1);
+	stroke: rgba(112,112,112,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.n_1 {
+	overflow: visible;
+	position: absolute;
+	width: 1919.329px;
+	height: 485.999px;
+	left: 0px;
+	top: 64px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#n_ {
+	left: 172.115px;
+	top: 856px;
+	position: absolute;
+	overflow: visible;
+	width: 116px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Apple SD Gothic Neo;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 21px;
+	color: rgba(0,0,0,1);
+	text-transform: uppercase;
+}
+#n____j {
+	left: 172.115px;
+	top: 1270px;
+	position: absolute;
+	overflow: visible;
+	width: 95px;
+	white-space: nowrap;
+	text-align: center;
+	font-family: Apple SD Gothic Neo;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 24px;
+	color: rgba(0,0,0,1);
+	text-transform: uppercase;
+}
+#n__AR_________________________ {
+	left: 178.799px;
+	top: 906px;
+	position: absolute;
+	overflow: visible;
+	width: 611px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Apple SD Gothic Neo;
+	font-style: normal;
+	font-weight: lighter;
+	font-size: 14px;
+	color: rgba(0,0,0,1);
+}
+#n__l {
+	left: 172.115px;
+	top: 1035px;
+	position: absolute;
+	overflow: visible;
+	width: 79px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Apple SD Gothic Neo;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 21px;
+	color: rgba(0,0,0,1);
+	text-transform: uppercase;
+}
+#n__AR__AI________2_______ {
+	left: 193.838px;
+	top: 1085px;
+	position: absolute;
+	overflow: visible;
+	width: 377px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Apple SD Gothic Neo;
+	font-style: normal;
+	font-weight: lighter;
+	font-size: 14px;
+	color: rgba(0,0,0,1);
+	text-transform: uppercase;
+}
+#n__n {
+	left: 426.11px;
+	top: 1377px;
+	position: absolute;
+	overflow: visible;
+	width: 69px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Apple SD Gothic Neo;
+	font-style: normal;
+	font-weight: lighter;
+	font-size: 14px;
+	color: rgba(0,0,0,1);
+}
+#email_hyg05onlygmailcom {
+	left: 426.11px;
+	top: 1435px;
+	position: absolute;
+	overflow: visible;
+	width: 170px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Apple SD Gothic Neo;
+	font-style: normal;
+	font-weight: lighter;
+	font-size: 14px;
+	color: rgba(0,0,0,1);
+}
+#n_AI___ {
+	left: 426.11px;
+	top: 1501px;
+	position: absolute;
+	overflow: visible;
+	width: 143px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Apple SD Gothic Neo;
+	font-style: normal;
+	font-weight: lighter;
+	font-size: 14px;
+	color: rgba(0,0,0,1);
+}
+#github_githubcomyong-gyun {
+	left: 426.11px;
+	top: 1566px;
+	position: absolute;
+	overflow: visible;
+	width: 177px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Apple SD Gothic Neo;
+	font-style: normal;
+	font-weight: lighter;
+	font-size: 14px;
+	color: rgba(0,0,0,1);
+}
+#yong-gyun_profile {
+	position: absolute;
+	width: 193.838px;
+	height: 191.932px;
+	left: 168.773px;
+	top: 1349px;
+	overflow: visible;
+}
+#n__s {
+	left: 1176.397px;
+	top: 1377px;
+	position: absolute;
+	overflow: visible;
+	width: 69px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Apple SD Gothic Neo;
+	font-style: normal;
+	font-weight: lighter;
+	font-size: 14px;
+	color: rgba(0,0,0,1);
+}
+#email_lapeuchigmailcom {
+	left: 1176.397px;
+	top: 1435px;
+	position: absolute;
+	overflow: visible;
+	width: 157px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Apple SD Gothic Neo;
+	font-style: normal;
+	font-weight: lighter;
+	font-size: 14px;
+	color: rgba(0,0,0,1);
+}
+#n____ {
+	left: 1184.752px;
+	top: 1501px;
+	position: absolute;
+	overflow: visible;
+	width: 168px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Apple SD Gothic Neo;
+	font-style: normal;
+	font-weight: lighter;
+	font-size: 14px;
+	color: rgba(0,0,0,1);
+}
+#github_githubcomlapeuchi {
+	left: 1183.081px;
+	top: 1566px;
+	position: absolute;
+	overflow: visible;
+	width: 162px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Apple SD Gothic Neo;
+	font-style: normal;
+	font-weight: lighter;
+	font-size: 14px;
+	color: rgba(0,0,0,1);
+}
+#n____w {
+	left: 172.115px;
+	top: 1762px;
+	position: absolute;
+	overflow: visible;
+	width: 115px;
+	white-space: nowrap;
+	text-align: center;
+	font-family: Apple SD Gothic Neo;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 24px;
+	color: rgba(0,0,0,1);
+	text-transform: uppercase;
+}
+#maxst_icon {
+	position: absolute;
+	width: 157.076px;
+	height: 157.076px;
+	left: 223.916px;
+	top: 1819px;
+	overflow: visible;
+}
+#Unity_icon {
+	position: absolute;
+	width: 138.695px;
+	height: 138.695px;
+	left: 422.768px;
+	top: 1819px;
+	overflow: visible;
+}
+#AR_SDK____MAXST________MAXST_I {
+	left: 604.909px;
+	top: 1847px;
+	position: absolute;
+	overflow: visible;
+	width: 450px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Apple SD Gothic Neo;
+	font-style: normal;
+	font-weight: lighter;
+	font-size: 14px;
+	color: rgba(0,0,0,1);
+}
+#n_____ {
+	left: 172.115px;
+	top: 2055px;
+	position: absolute;
+	overflow: visible;
+	width: 207px;
+	white-space: nowrap;
+	text-align: center;
+	font-family: Apple SD Gothic Neo;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 24px;
+	color: rgba(0,0,0,1);
+	text-transform: uppercase;
+}
+#n______AR___ {
+	left: 173.786px;
+	top: 2187px;
+	position: absolute;
+	overflow: visible;
+	width: 260px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Apple SD Gothic Neo;
+	font-style: normal;
+	font-weight: lighter;
+	font-size: 14px;
+	color: rgba(0,0,0,1);
+}
+#n__AR_______ {
+	left: 850.548px;
+	top: 2121px;
+	position: absolute;
+	overflow: visible;
+	width: 249px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Apple SD Gothic Neo;
+	font-style: normal;
+	font-weight: lighter;
+	font-size: 14px;
+	color: rgba(0,0,0,1);
+}
+#n______ {
+	left: 850.548px;
+	top: 2187px;
+	position: absolute;
+	overflow: visible;
+	width: 161px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Apple SD Gothic Neo;
+	font-style: normal;
+	font-weight: lighter;
+	font-size: 14px;
+	color: rgba(0,0,0,1);
+}
+#n______WBS {
+	left: 172.115px;
+	top: 2121px;
+	position: absolute;
+	overflow: visible;
+	width: 251px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Apple SD Gothic Neo;
+	font-style: normal;
+	font-weight: lighter;
+	font-size: 14px;
+	color: rgba(0,0,0,1);
+}
+#n_____ba {
+	left: 173.786px;
+	top: 2372px;
+	position: absolute;
+	overflow: visible;
+	width: 205px;
+	white-space: nowrap;
+	text-align: center;
+	font-family: Apple SD Gothic Neo;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 24px;
+	color: rgba(0,0,0,1);
+	text-transform: uppercase;
+}
+#AR_____ {
+	left: 173.786px;
+	top: 2453px;
+	position: absolute;
+	overflow: visible;
+	width: 346px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Apple SD Gothic Neo;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 21px;
+	color: rgba(0,0,0,1);
+	text-transform: uppercase;
+}
+#n___________ {
+	left: 173.786px;
+	top: 2501px;
+	position: absolute;
+	overflow: visible;
+	width: 369px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Apple SD Gothic Neo;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 14px;
+	color: rgba(0,0,0,1);
+}
+#books {
+	position: absolute;
+	width: 434.635px;
+	height: 198.99px;
+	left: 712.986px;
+	top: 2934.505px;
+	overflow: visible;
+}
+#laboratory {
+	position: absolute;
+	width: 434.146px;
+	height: 223.175px;
+	left: 713.475px;
+	top: 2353.913px;
+	overflow: visible;
+}
+#test {
+	position: absolute;
+	width: 454.973px;
+	height: 208.301px;
+	left: 172.115px;
+	top: 2638.699px;
+	overflow: visible;
+}
+#n__bb {
+	left: 730.909px;
+	top: 2669px;
+	position: absolute;
+	overflow: visible;
+	width: 116px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Apple SD Gothic Neo;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 21px;
+	color: rgba(0,0,0,1);
+	text-transform: uppercase;
+}
+#n_____________ {
+	left: 730.909px;
+	top: 2720px;
+	position: absolute;
+	overflow: visible;
+	width: 324px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Apple SD Gothic Neo;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 14px;
+	color: rgba(0,0,0,1);
+}
+#n__ {
+	left: 193.786px;
+	top: 2950.699px;
+	position: absolute;
+	overflow: visible;
+	width: 157px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Apple SD Gothic Neo;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 21px;
+	color: rgba(0,0,0,1);
+	text-transform: uppercase;
+}
+#n_________ {
+	left: 193.786px;
+	top: 2983.699px;
+	position: absolute;
+	overflow: visible;
+	width: 329px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Apple SD Gothic Neo;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 14px;
+	color: rgba(0,0,0,1);
+}
+#n_____bf {
+	left: 155.405px;
+	top: 3739px;
+	position: absolute;
+	overflow: visible;
+	width: 205px;
+	white-space: nowrap;
+	text-align: center;
+	font-family: Apple SD Gothic Neo;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 24px;
+	color: rgba(0,0,0,1);
+	text-transform: uppercase;
+}
+#n_____bg {
+	left: 168.773px;
+	top: 3817px;
+	position: absolute;
+	overflow: visible;
+	width: 225px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Apple SD Gothic Neo;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 14px;
+	color: rgba(0,0,0,1);
+}
+#KakaoTalk_Image_2023-07-03-11- {
+	position: absolute;
+	width: 227.259px;
+	height: 291.705px;
+	left: 905.692px;
+	top: 1289px;
+	overflow: visible;
+}
+#Rectangle {
+	position: absolute;
+	width: 612.561px;
+	height: 436.998px;
+	left: 424.628px;
+	top: 3188px;
+	overflow: visible;
+}
+#n________ {
+	left: 168.773px;
+	top: 3855px;
+	position: absolute;
+	overflow: visible;
+	width: 245px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Apple SD Gothic Neo;
+	font-style: normal;
+	font-weight: lighter;
+	font-size: 14px;
+	color: rgba(0,0,0,1);
+}
+#n__________ {
+	left: 168.773px;
+	top: 3913px;
+	position: absolute;
+	overflow: visible;
+	width: 354px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Apple SD Gothic Neo;
+	font-style: normal;
+	font-weight: lighter;
+	font-size: 14px;
+	color: rgba(0,0,0,1);
+}
+#n_________bl {
+	left: 165.431px;
+	top: 3977px;
+	position: absolute;
+	overflow: visible;
+	width: 283px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Apple SD Gothic Neo;
+	font-style: normal;
+	font-weight: lighter;
+	font-size: 14px;
+	color: rgba(0,0,0,1);
+}
+#n_________bm {
+	left: 168.773px;
+	top: 4041px;
+	position: absolute;
+	overflow: visible;
+	width: 259px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Apple SD Gothic Neo;
+	font-style: normal;
+	font-weight: lighter;
+	font-size: 14px;
+	color: rgba(0,0,0,1);
+}
+#n_____MAXST_SDK_______ {
+	left: 165.431px;
+	top: 4163px;
+	position: absolute;
+	overflow: visible;
+	width: 477px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Apple SD Gothic Neo;
+	font-style: normal;
+	font-weight: lighter;
+	font-size: 14px;
+	color: rgba(0,0,0,1);
+}
+#n____bo {
+	left: 165.431px;
+	top: 4227px;
+	position: absolute;
+	overflow: visible;
+	width: 145px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Apple SD Gothic Neo;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 14px;
+	color: rgba(0,0,0,1);
+}
+#n___________bp {
+	left: 165.431px;
+	top: 4268px;
+	position: absolute;
+	overflow: visible;
+	width: 453px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Apple SD Gothic Neo;
+	font-style: normal;
+	font-weight: lighter;
+	font-size: 14px;
+	color: rgba(0,0,0,1);
+}
+#n____________bq {
+	left: 168.773px;
+	top: 4099px;
+	position: absolute;
+	overflow: visible;
+	width: 391px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Apple SD Gothic Neo;
+	font-style: normal;
+	font-weight: lighter;
+	font-size: 14px;
+	color: rgba(0,0,0,1);
+}
+#n_1_br {
+	position: absolute;
+	width: 1920px;
+	height: 64px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+}
+#n_1_bs {
+	fill: rgba(0,0,0,1);
+}
+.n_1_bs {
+	position: absolute;
+	overflow: visible;
+	width: 1920px;
+	height: 64px;
+	left: 0px;
+	top: 0px;
+}
+#Team_META {
+	left: 96.919px;
+	top: 15px;
+	position: absolute;
+	overflow: visible;
+	width: 193px;
+	white-space: nowrap;
+	text-align: center;
+	font-family: Apple SD Gothic Neo;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 35px;
+	color: rgba(255,255,255,1);
+	text-transform: uppercase;
+}
+#Repository {
+	left: 695.144px;
+	top: 29px;
+	position: absolute;
+	overflow: visible;
+	width: 121px;
+	white-space: nowrap;
+	text-align: center;
+	font-family: Apple SD Gothic Neo;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 25px;
+	color: rgba(255,255,255,1);
+}
+#Download {
+	left: 1004.282px;
+	top: 29px;
+	position: absolute;
+	overflow: visible;
+	width: 113px;
+	white-space: nowrap;
+	text-align: center;
+	font-family: Apple SD Gothic Neo;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 25px;
+	color: rgba(255,255,255,1);
+}
+#Home {
+	left: 471.227px;
+	top: 29px;
+	position: absolute;
+	overflow: visible;
+	width: 67px;
+	white-space: nowrap;
+	text-align: center;
+	font-family: Apple SD Gothic Neo;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 25px;
+	color: rgba(255,255,255,1);
+}
+#n_2 {
+	fill: rgba(0,0,0,1);
+	stroke: rgba(112,112,112,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.n_2 {
+	overflow: visible;
+	position: absolute;
+	width: 1919.33px;
+	height: 276.691px;
+	left: -0.001px;
+	top: 4397.308px;
+	transform: matrix(1,0,0,1,0,0);
+}
