@@ -21,7 +21,6 @@ public class UI_TrackingSucessPopup : UI_Popup
 
     public void SetInfo(Data.TrackableImage imageData)
     {
-        GetText((int)Texts.TitleText).text = $"인식 성공";
         GetText((int)Texts.ContentsText).text = $"{imageData.page}p {imageData.name}";//을(를)\n하시겠습니까?";
        
         GetButton((int)Buttons.CancleButton).onClick.AddListener(delegate { OnClickCancelButton(); });
